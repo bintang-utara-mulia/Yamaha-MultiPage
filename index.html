@@ -17,9 +17,9 @@
 
 body{
     background:
-        radial-gradient(circle at 15% 10%, rgba(0,91,255,.20), transparent 30%),
-        radial-gradient(circle at 85% 40%, rgba(0,145,255,.13), transparent 30%),
-        linear-gradient(145deg,#02050b,#06101d 45%,#02050a);
+        radial-gradient(circle at 15% 10%,rgba(0,91,255,.18),transparent 28%),
+        radial-gradient(circle at 85% 45%,rgba(0,130,255,.14),transparent 30%),
+        linear-gradient(145deg,#010307,#06101c 48%,#010307);
     color:#fff;
     font-family:'DM Sans',sans-serif;
     min-height:100vh;
@@ -31,66 +31,70 @@ body:before{
     inset:0;
     pointer-events:none;
     background:
-        linear-gradient(rgba(20,120,255,.025) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(20,120,255,.025) 1px,transparent 1px);
-    background-size:40px 40px;
+        linear-gradient(rgba(30,130,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(30,130,255,.025) 1px,transparent 1px);
+    background-size:42px 42px;
 }
+
+/* ================= HEADER ================= */
 
 header{
     position:sticky;
     top:0;
-    z-index:10;
-    height:110px;
+    z-index:100;
+    height:108px;
     display:flex;
     align-items:center;
     padding:0 38px;
-    background:rgba(2,5,11,.94);
+    background:rgba(1,4,9,.94);
     backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(80,160,255,.15);
+    border-bottom:1px solid rgba(70,150,255,.18);
 }
 
 .logo{
-    width:74px;
-    height:74px;
-    border:3px solid #fff;
+    width:70px;
+    height:70px;
+    border:3px solid white;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:34px;
+    font-size:33px;
     font-weight:700;
 }
 
 .brand{
-    margin-left:22px;
-    font-size:42px;
+    margin-left:20px;
+    font-size:40px;
     font-weight:800;
-    letter-spacing:3px;
+    letter-spacing:4px;
 }
 
+/* ================= HERO ================= */
+
 .hero{
-    padding:75px 38px 30px;
+    padding:75px 25px 35px;
     text-align:center;
 }
 
 .hero small{
-    color:#4da3ff;
+    color:#42a2ff;
     font-size:13px;
     font-weight:800;
-    letter-spacing:5px;
+    letter-spacing:6px;
 }
 
 .hero h1{
-    margin-top:15px;
+    margin-top:16px;
     font-family:'Playfair Display',serif;
-    font-size:clamp(42px,8vw,82px);
+    font-size:clamp(42px,7vw,78px);
     line-height:1;
 }
 
 .hero p{
-    max-width:650px;
-    margin:22px auto 0;
-    color:#8e9aaa;
+    max-width:680px;
+    margin:23px auto 0;
+    color:#8d99a9;
     font-size:17px;
     line-height:1.7;
 }
@@ -100,78 +104,201 @@ header{
     height:3px;
     background:#168cff;
     margin:30px auto;
-    box-shadow:0 0 20px #168cff;
+    box-shadow:0 0 22px #168cff;
 }
+
+/* ================= GRID ================= */
 
 .grid{
-    width:min(1200px,92%);
+    width:min(1250px,92%);
     margin:35px auto 80px;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:28px;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
 }
 
+/* ================= CARD ================= */
+
 .card{
-    position:relative;
     overflow:hidden;
-    border:1px solid rgba(45,140,255,.65);
-    border-radius:26px;
-    background:linear-gradient(145deg,#08121e,#05090f);
-    box-shadow:0 20px 60px rgba(0,0,0,.45);
+    border:1px solid rgba(42,137,255,.65);
+    border-radius:25px;
+    background:#050a11;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.55),
+        inset 0 0 30px rgba(0,90,255,.035);
     transition:.35s ease;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    border-color:#2b9aff;
-    box-shadow:0 25px 70px rgba(0,100,255,.25);
+    transform:translateY(-7px);
+    border-color:#329dff;
+    box-shadow:
+        0 25px 70px rgba(0,100,255,.25),
+        0 0 30px rgba(0,100,255,.08);
 }
 
+/* ================= MINI SHOWROOM ================= */
+
 .motor-image{
-    height:330px;
+    height:390px;
     position:relative;
+    overflow:hidden;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:25px;
+
     background:
-        radial-gradient(circle at center,rgba(0,110,255,.25),transparent 55%),
-        linear-gradient(135deg,#071b32,#02060c);
-    overflow:hidden;
+        radial-gradient(
+            ellipse at center 58%,
+            rgba(0,132,255,.38) 0%,
+            rgba(0,69,145,.18) 27%,
+            transparent 62%
+        ),
+        linear-gradient(
+            145deg,
+            #020711 0%,
+            #061b34 48%,
+            #01050b 100%
+        );
 }
 
-/* cahaya biru di belakang motor */
-.motor-image:before{
+/* lantai showroom */
+.motor-image:after{
     content:"";
     position:absolute;
-    width:280px;
-    height:280px;
-    border-radius:50%;
-    background:rgba(0,110,255,.18);
-    filter:blur(45px);
+    left:-10%;
+    right:-10%;
+    bottom:-20px;
+    height:125px;
+    transform:perspective(250px) rotateX(45deg);
+    transform-origin:bottom;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(50,150,255,.16) 0px,
+            rgba(50,150,255,.16) 1px,
+            transparent 1px,
+            transparent 85px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(50,150,255,.13) 0px,
+            rgba(50,150,255,.13) 1px,
+            transparent 1px,
+            transparent 55px
+        );
+    opacity:.8;
 }
 
+/* lampu neon atas */
+.motor-image .neon-top{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:7px;
+    background:#167dff;
+    box-shadow:
+        0 0 10px #168cff,
+        0 0 30px #168cff,
+        0 0 65px rgba(0,130,255,.7);
+}
+
+/* tulisan YAMAHA */
+.showroom-brand{
+    position:absolute;
+    top:27px;
+    left:30px;
+    z-index:1;
+    color:#dcecff;
+    font-size:16px;
+    font-weight:800;
+    letter-spacing:3px;
+    text-shadow:0 0 12px #168cff;
+}
+
+.showroom-brand span{
+    display:block;
+    margin-top:4px;
+    color:#579fff;
+    font-size:8px;
+    letter-spacing:3px;
+}
+
+/* nama motor besar di belakang */
+.model-bg{
+    position:absolute;
+    top:48%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:100%;
+    text-align:center;
+    color:rgba(92,165,255,.13);
+    font-size:92px;
+    font-weight:800;
+    letter-spacing:5px;
+    white-space:nowrap;
+    text-shadow:0 0 25px rgba(0,100,255,.18);
+}
+
+/* garis neon samping */
+.neon-line{
+    position:absolute;
+    left:0;
+    top:85px;
+    width:100%;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #168cff,
+        transparent
+    );
+    box-shadow:0 0 12px #168cff;
+    opacity:.8;
+}
+
+.neon-line.two{
+    top:auto;
+    bottom:92px;
+}
+
+/* MOTOR */
 .motor-image img{
     position:relative;
-    z-index:2;
-    width:100%;
-    height:100%;
+    z-index:5;
+
+    width:84%;
+    height:84%;
+
     object-fit:contain;
-    mix-blend-mode:normal;
-    filter:drop-shadow(0 20px 25px rgba(0,0,0,.75));
-    transition:.4s ease;
+
+    filter:
+        drop-shadow(0 22px 18px rgba(0,0,0,.85))
+        drop-shadow(0 0 12px rgba(0,100,255,.22));
+
+    transition:.45s ease;
 }
 
 .card:hover .motor-image img{
     transform:scale(1.06);
 }
 
+/* ================= INFO ================= */
+
 .info{
-    padding:27px 28px 30px;
+    padding:28px 30px 32px;
+    background:
+        linear-gradient(
+            180deg,
+            #070d15,
+            #03070c
+        );
 }
 
 .category{
-    color:#39a0ff;
+    color:#399eff;
     font-size:12px;
     font-weight:800;
     letter-spacing:4px;
@@ -180,11 +307,11 @@ header{
 .name{
     margin-top:9px;
     font-family:'Playfair Display',serif;
-    font-size:38px;
+    font-size:40px;
 }
 
 .desc{
-    color:#929cab;
+    color:#909baa;
     margin-top:12px;
     line-height:1.6;
     min-height:52px;
@@ -204,26 +331,30 @@ header{
     display:block;
     color:#7e8997;
     font-size:12px;
-    margin-bottom:4px;
+    margin-bottom:5px;
 }
 
 .price strong{
-    font-size:18px;
+    font-size:19px;
 }
 
 .btn{
-    border:1px solid #277fc1;
-    background:rgba(14,39,65,.55);
+    border:1px solid #2b8bd1;
+    background:rgba(10,39,67,.65);
     color:#fff;
-    padding:13px 19px;
+    padding:13px 21px;
     border-radius:10px;
     font-weight:700;
     cursor:pointer;
+    transition:.25s;
 }
 
 .btn:hover{
-    background:#0b65ae;
+    background:#0869b8;
+    box-shadow:0 0 20px rgba(0,120,255,.3);
 }
+
+/* ================= FOOTER ================= */
 
 footer{
     text-align:center;
@@ -232,34 +363,63 @@ footer{
     border-top:1px solid rgba(255,255,255,.07);
 }
 
-@media(max-width:600px){
+/* ================= MOBILE ================= */
+
+@media(max-width:750px){
+
     header{
         height:90px;
         padding:0 25px;
     }
 
     .logo{
-        width:58px;
-        height:58px;
+        width:57px;
+        height:57px;
         font-size:27px;
     }
 
     .brand{
-        font-size:29px;
+        font-size:28px;
         margin-left:15px;
     }
 
     .hero{
-        padding:55px 25px 20px;
+        padding:55px 25px 25px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero p{
+        font-size:15px;
     }
 
     .grid{
         width:92%;
         grid-template-columns:1fr;
+        gap:25px;
     }
 
     .motor-image{
-        height:300px;
+        height:330px;
+    }
+
+    .model-bg{
+        font-size:70px;
+    }
+
+    .motor-image img{
+        width:90%;
+        height:88%;
+    }
+
+    .info{
+        padding:25px;
+    }
+
+    .name{
+        font-size:35px;
     }
 }
 </style>
@@ -273,150 +433,556 @@ footer{
 </header>
 
 <section class="hero">
+
     <small>REV YOUR HEART</small>
+
     <h1>Premium Motor Line Up</h1>
+
     <div class="line"></div>
+
     <p>
         Jelajahi berbagai pilihan motor Yamaha dengan desain,
         performa, dan karakter yang berbeda untuk setiap perjalanan.
     </p>
+
 </section>
+
 
 <section class="grid">
 
-    <!-- NMAX -->
-    <article class="card">
-        <div class="motor-image">
-            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_NMAX_2026.jpg"
-                 alt="Yamaha NMAX">
-        </div>
-        <div class="info">
-            <div class="category">PREMIUM SCOOTER</div>
-            <div class="name">NMAX</div>
-            <div class="desc">
-                Maxi scooter dengan desain premium dan karakter berkendara nyaman.
-            </div>
-            <div class="bottom">
-                <div class="price">
-                    <span>Mulai dari</span>
-                    <strong>Rp 34.000.000</strong>
-                </div>
-                <button class="btn">DETAIL</button>
-            </div>
-        </div>
-    </article>
 
-    <!-- AEROX -->
-    <article class="card">
-        <div class="motor-image">
-            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Aerox.jpg"
-                 alt="Yamaha Aerox">
-        </div>
-        <div class="info">
-            <div class="category">SPORT SCOOTER</div>
-            <div class="name">AEROX</div>
-            <div class="desc">
-                Scooter sporty dengan tampilan agresif dan karakter dinamis.
-            </div>
-            <div class="bottom">
-                <div class="price">
-                    <span>Mulai dari</span>
-                    <strong>Rp 28.000.000</strong>
-                </div>
-                <button class="btn">DETAIL</button>
-            </div>
-        </div>
-    </article>
+<!-- ================= NMAX ================= -->
 
-    <!-- R15 -->
-    <article class="card">
-        <div class="motor-image">
-            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R15_v4_bike.jpg"
-                 alt="Yamaha R15">
-        </div>
-        <div class="info">
-            <div class="category">SPORT BIKE</div>
-            <div class="name">R15</div>
-            <div class="desc">
-                Sport bike Yamaha dengan desain racing yang tajam dan modern.
-            </div>
-            <div class="bottom">
-                <div class="price">
-                    <span>Mulai dari</span>
-                    <strong>Rp 39.000.000</strong>
-                </div>
-                <button class="btn">DETAIL</button>
-            </div>
-        </div>
-    </article>
+<article class="card">
 
-    <!-- MT15 -->
-    <article class="card">
-        <div class="motor-image">
-            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_MT15.jpg"
-                 alt="Yamaha MT-15">
-        </div>
-        <div class="info">
-            <div class="category">NAKED BIKE</div>
-            <div class="name">MT-15</div>
-            <div class="desc">
-                Naked bike dengan karakter agresif dan desain streetfighter.
-            </div>
-            <div class="bottom">
-                <div class="price">
-                    <span>Mulai dari</span>
-                    <strong>Rp 38.000.000</strong>
-                </div>
-                <button class="btn">DETAIL</button>
-            </div>
-        </div>
-    </article>
+    <div class="motor-image">
 
-    <!-- R15 V3 -->
-    <article class="card">
-        <div class="motor-image">
-            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R15_V3.0.jpg"
-                 alt="Yamaha R15 V3">
-        </div>
-        <div class="info">
-            <div class="category">SPORT PERFORMANCE</div>
-            <div class="name">R15 V3</div>
-            <div class="desc">
-                Sport motorcycle dengan siluet racing dan tampilan aerodinamis.
-            </div>
-            <div class="bottom">
-                <div class="price">
-                    <span>Mulai dari</span>
-                    <strong>Rp 36.000.000</strong>
-                </div>
-                <button class="btn">DETAIL</button>
-            </div>
-        </div>
-    </article>
+        <div class="neon-top"></div>
 
-    <!-- MT15 2 -->
-    <article class="card">
-        <div class="motor-image">
-            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_MT15_2.jpg"
-                 alt="Yamaha MT-15">
+        <div class="showroom-brand">
+            YAMAHA
+            <span>REV YOUR HEART</span>
         </div>
-        <div class="info">
-            <div class="category">STREET NAKED</div>
-            <div class="name">MT-15</div>
-            <div class="desc">
-                Gaya minimalis, agresif, dan cocok untuk karakter berkendara urban.
-            </div>
-            <div class="bottom">
-                <div class="price">
-                    <span>Mulai dari</span>
-                    <strong>Rp 38.000.000</strong>
-                </div>
-                <button class="btn">DETAIL</button>
-            </div>
+
+        <div class="model-bg">NMAX</div>
+
+        <div class="neon-line"></div>
+        <div class="neon-line two"></div>
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_NMAX_2026.jpg"
+        alt="Yamaha NMAX"
+        onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <div class="info">
+
+        <div class="category">PREMIUM MAXI</div>
+
+        <div class="name">NMAX</div>
+
+        <div class="desc">
+            Maxi scooter premium dengan desain modern,
+            nyaman untuk perjalanan harian maupun jarak jauh.
         </div>
-    </article>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>Mulai dari</span>
+                <strong>Rp 32.175.000</strong>
+            </div>
+
+            <button class="btn">DETAIL</button>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ================= AEROX ================= -->
+
+<article class="card">
+
+    <div class="motor-image">
+
+        <div class="neon-top"></div>
+
+        <div class="showroom-brand">
+            YAMAHA
+            <span>REV YOUR HEART</span>
+        </div>
+
+        <div class="model-bg">AEROX</div>
+
+        <div class="neon-line"></div>
+        <div class="neon-line two"></div>
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Aerox.jpg"
+        alt="Yamaha Aerox"
+        onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <div class="info">
+
+        <div class="category">SPORT SCOOTER</div>
+
+        <div class="name">AEROX</div>
+
+        <div class="desc">
+            Scooter sporty dengan karakter agresif,
+            desain aerodinamis dan tampilan modern.
+        </div>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>Mulai dari</span>
+                <strong>Rp 29.380.000</strong>
+            </div>
+
+            <button class="btn">DETAIL</button>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ================= R15 ================= -->
+
+<article class="card">
+
+    <div class="motor-image">
+
+        <div class="neon-top"></div>
+
+        <div class="showroom-brand">
+            YAMAHA
+            <span>REV YOUR HEART</span>
+        </div>
+
+        <div class="model-bg">R15</div>
+
+        <div class="neon-line"></div>
+        <div class="neon-line two"></div>
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R15_v4_bike.jpg"
+        alt="Yamaha R15"
+        onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <div class="info">
+
+        <div class="category">SPORT BIKE</div>
+
+        <div class="name">R15</div>
+
+        <div class="desc">
+            Sport bike dengan desain racing,
+            aerodinamis dan karakter berkendara sporty.
+        </div>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>Mulai dari</span>
+                <strong>Rp 42.200.000</strong>
+            </div>
+
+            <button class="btn">DETAIL</button>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ================= MT-15 ================= -->
+
+<article class="card">
+
+    <div class="motor-image">
+
+        <div class="neon-top"></div>
+
+        <div class="showroom-brand">
+            YAMAHA
+            <span>REV YOUR HEART</span>
+        </div>
+
+        <div class="model-bg">MT-15</div>
+
+        <div class="neon-line"></div>
+        <div class="neon-line two"></div>
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_MT15.jpg"
+        alt="Yamaha MT-15"
+        onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <div class="info">
+
+        <div class="category">NAKED BIKE</div>
+
+        <div class="name">MT-15</div>
+
+        <div class="desc">
+            Naked bike dengan karakter agresif,
+            posisi berkendara nyaman dan desain streetfighter.
+        </div>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>Mulai dari</span>
+                <strong>Rp 41.215.000</strong>
+            </div>
+
+            <button class="btn">DETAIL</button>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ================= R15M ================= -->
+
+<article class="card">
+
+    <div class="motor-image">
+
+        <div class="neon-top"></div>
+
+        <div class="showroom-brand">
+            YAMAHA
+            <span>REV YOUR HEART</span>
+        </div>
+
+        <div class="model-bg">R15M</div>
+
+        <div class="neon-line"></div>
+        <div class="neon-line two"></div>
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R15.jpg"
+        alt="Yamaha R15M"
+        onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <div class="info">
+
+        <div class="category">RACING SERIES</div>
+
+        <div class="name">R15M</div>
+
+        <div class="desc">
+            Sport motorcycle premium dengan DNA racing
+            dan desain fairing yang tajam.
+        </div>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>Mulai dari</span>
+                <strong>Rp 46.950.000</strong>
+            </div>
+
+            <button class="btn">DETAIL</button>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ================= AEROX ALPHA ================= -->
+
+<article class="card">
+
+    <div class="motor-image">
+
+        <div class="neon-top"></div>
+
+        <div class="showroom-brand">
+            YAMAHA
+            <span>REV YOUR HEART</span>
+        </div>
+
+        <div class="model-bg">AEROX</div>
+
+        <div class="neon-line"></div>
+        <div class="neon-line two"></div>
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_Aerox.jpg"
+        alt="Yamaha Aerox Alpha"
+        onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <div class="info">
+
+        <div class="category">MAXI SPORT</div>
+
+        <div class="name">AEROX ALPHA</div>
+
+        <div class="desc">
+            Super sport scooter dengan karakter agresif,
+            sporty dan modern.
+        </div>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>Mulai dari</span>
+                <strong>Rp 30.700.000</strong>
+            </div>
+
+            <button class="btn">DETAIL</button>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ================= XMAX ================= -->
+
+<article class="card">
+
+    <div class="motor-image">
+
+        <div class="neon-top"></div>
+
+        <div class="showroom-brand">
+            YAMAHA
+            <span>REV YOUR HEART</span>
+        </div>
+
+        <div class="model-bg">XMAX</div>
+
+        <div class="neon-line"></div>
+        <div class="neon-line two"></div>
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_XMAX.jpg"
+        alt="Yamaha XMAX"
+        onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <div class="info">
+
+        <div class="category">PREMIUM MAXI</div>
+
+        <div class="name">XMAX</div>
+
+        <div class="desc">
+            Maxi scooter premium dengan bodi besar,
+            desain elegan dan karakter touring.
+        </div>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>PREMIUM LINE</span>
+                <strong>YAMAHA MAXI</strong>
+            </div>
+
+            <button class="btn">DETAIL</button>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ================= FAZZIO ================= -->
+
+<article class="card">
+
+    <div class="motor-image">
+
+        <div class="neon-top"></div>
+
+        <div class="showroom-brand">
+            YAMAHA
+            <span>REV YOUR HEART</span>
+        </div>
+
+        <div class="model-bg">FAZZIO</div>
+
+        <div class="neon-line"></div>
+        <div class="neon-line two"></div>
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_Fazzio.jpg"
+        alt="Yamaha Fazzio"
+        onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <div class="info">
+
+        <div class="category">CLASSY SCOOTER</div>
+
+        <div class="name">FAZZIO</div>
+
+        <div class="desc">
+            Scooter stylish dengan desain modern,
+            ringan dan cocok untuk mobilitas perkotaan.
+        </div>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>YAMAHA CLASSY</span>
+                <strong>FAZZIO HYBRID</strong>
+            </div>
+
+            <button class="btn">DETAIL</button>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ================= LEXi ================= -->
+
+<article class="card">
+
+    <div class="motor-image">
+
+        <div class="neon-top"></div>
+
+        <div class="showroom-brand">
+            YAMAHA
+            <span>REV YOUR HEART</span>
+        </div>
+
+        <div class="model-bg">LEXi</div>
+
+        <div class="neon-line"></div>
+        <div class="neon-line two"></div>
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_Lexi.jpg"
+        alt="Yamaha Lexi"
+        onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <div class="info">
+
+        <div class="category">URBAN SCOOTER</div>
+
+        <div class="name">LEXi</div>
+
+        <div class="desc">
+            Scooter praktis dengan desain elegan
+            dan posisi berkendara yang nyaman.
+        </div>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>URBAN CLASS</span>
+                <strong>LEXi</strong>
+            </div>
+
+            <button class="btn">DETAIL</button>
+
+        </div>
+
+    </div>
+
+</article>
+
+
+<!-- ================= MT-25 ================= -->
+
+<article class="card">
+
+    <div class="motor-image">
+
+        <div class="neon-top"></div>
+
+        <div class="showroom-brand">
+            YAMAHA
+            <span>REV YOUR HEART</span>
+        </div>
+
+        <div class="model-bg">MT-25</div>
+
+        <div class="neon-line"></div>
+        <div class="neon-line two"></div>
+
+        <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_MT-25.jpg"
+        alt="Yamaha MT-25"
+        onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <div class="info">
+
+        <div class="category">HYPER NAKED</div>
+
+        <div class="name">MT-25</div>
+
+        <div class="desc">
+            Naked bike berkarakter kuat dengan tampilan
+            agresif khas keluarga MT.
+        </div>
+
+        <div class="bottom">
+
+            <div class="price">
+                <span>MT SERIES</span>
+                <strong>MT-25</strong>
+            </div>
+
+            <button class="btn">DETAIL</button>
+
+        </div>
+
+    </div>
+
+</article>
+
 
 </section>
+
 
 <footer>
     © 2026 YAMAHA — Premium Motor Line Up
