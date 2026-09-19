@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>YAMAHA — Premium Motor Line Up</title>
 
 <style>
@@ -19,6 +18,7 @@ body{
     font-family:'DM Sans',sans-serif;
     background:#05070d;
     color:white;
+    overflow-x:hidden;
 }
 
 /* HEADER */
@@ -28,17 +28,19 @@ header{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    background:#070a12;
+    background:rgba(7,10,18,0.95);
     border-bottom:1px solid rgba(255,255,255,.08);
     position:sticky;
     top:0;
     z-index:100;
+    backdrop-filter:blur(10px);
 }
 
 .logo{
     font-size:28px;
     font-weight:800;
     letter-spacing:4px;
+    cursor:pointer;
 }
 
 nav{
@@ -51,6 +53,7 @@ nav a{
     text-decoration:none;
     font-size:14px;
     transition:.3s;
+    font-weight:500;
 }
 
 nav a:hover{
@@ -79,6 +82,7 @@ nav a:hover{
     font-weight:800;
     color:rgba(255,255,255,.025);
     letter-spacing:10px;
+    pointer-events:none;
 }
 
 .hero-content{
@@ -98,7 +102,7 @@ nav a:hover{
 .hero h1{
     font-family:'Playfair Display',serif;
     font-size:70px;
-    line-height:1;
+    line-height:1.1;
     margin-bottom:25px;
 }
 
@@ -110,6 +114,7 @@ nav a:hover{
     color:#aab3c4;
     max-width:600px;
     line-height:1.8;
+    font-size:16px;
 }
 
 /* SECTION */
@@ -123,11 +128,13 @@ nav a:hover{
 
 .section-title h2{
     font-size:38px;
+    font-weight:700;
 }
 
 .section-title p{
     color:#7e8798;
     margin-top:8px;
+    font-size:15px;
 }
 
 /* GRID */
@@ -143,44 +150,42 @@ nav a:hover{
     border:1px solid rgba(255,255,255,.08);
     border-radius:18px;
     overflow:hidden;
-    transition:.4s;
+    transition:.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position:relative;
 }
 
 .motor-card:hover{
     transform:translateY(-8px);
     border-color:#168cff;
-    box-shadow:0 20px 60px rgba(0,120,255,.18);
+    box-shadow:0 20px 60px rgba(0,120,255,.15);
 }
 
-/* SHOWROOM */
+/* SHOWROOM BACKGROUND STYLE (Sesuai Contoh) */
 .motor-image{
     height:310px;
     position:relative;
     overflow:hidden;
-
-    background:
-        radial-gradient(circle at 50% 65%,rgba(0,145,255,.4),transparent 27%),
-        radial-gradient(circle at 50% 0%,rgba(0,87,180,.35),transparent 42%),
-        linear-gradient(145deg,#02040a,#06162b 50%,#02050b);
+    /* Background Biru Gelap Showroom */
+    background: 
+        radial-gradient(circle at 50% 120%, rgba(0, 140, 255, 0.15) 0%, transparent 60%),
+        linear-gradient(to bottom, #02050b 0%, #050d1f 50%, #02050b 100%);
 }
 
-/* NEON */
+/* Efek Neon Lantai */
 .motor-image:before{
     content:"";
     position:absolute;
-    left:-20%;
-    right:-20%;
-    bottom:18px;
-    height:2px;
-    background:#159cff;
-    box-shadow:
-        0 0 8px #159cff,
-        0 0 25px #159cff,
-        0 0 60px #006eff;
-    transform:rotate(-5deg);
+    left:-10%;
+    right:-10%;
+    bottom:40px;
+    height:1px;
+    background:linear-gradient(90deg, transparent, #159cff, transparent);
+    box-shadow: 0 0 15px #159cff, 0 0 30px rgba(21, 156, 255, 0.5);
     z-index:1;
+    opacity:0.6;
 }
 
+/* Efek Cahaya Atas */
 .motor-image:after{
     content:"";
     position:absolute;
@@ -188,75 +193,80 @@ nav a:hover{
     left:0;
     width:100%;
     height:100%;
-    background:
-        linear-gradient(90deg,transparent 48%,rgba(0,157,255,.08) 50%,transparent 52%),
-        linear-gradient(180deg,rgba(0,130,255,.1),transparent 40%);
+    background: radial-gradient(circle at 50% 0%, rgba(0, 100, 255, 0.1) 0%, transparent 50%);
     pointer-events:none;
-}
-
-/* YAMAHA BACKGROUND */
-.showroom-brand{
-    position:absolute;
-    top:22px;
-    left:25px;
-    font-size:14px;
-    letter-spacing:5px;
-    font-weight:800;
-    color:rgba(255,255,255,.55);
-    z-index:3;
-}
-
-/* MODEL BACKGROUND */
-.model-bg{
-    position:absolute;
-    left:20px;
-    bottom:25px;
-    font-size:64px;
-    font-weight:800;
-    letter-spacing:2px;
-    color:rgba(255,255,255,.055);
     z-index:0;
 }
 
-/* MOTOR */
+/* Teks YAMAHA di Dinding */
+.showroom-brand{
+    position:absolute;
+    top:25px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:12px;
+    letter-spacing:6px;
+    font-weight:800;
+    color:rgba(255,255,255,.3);
+    z-index:2;
+    text-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+/* Teks Model Besar di Belakang */
+.model-bg{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    font-size:80px;
+    font-weight:800;
+    letter-spacing:2px;
+    color:rgba(255,255,255,.03);
+    z-index:0;
+    white-space:nowrap;
+    pointer-events:none;
+}
+
+/* Gambar Motor */
 .motor-image img{
     position:absolute;
     z-index:4;
-    width:92%;
-    height:90%;
-    left:4%;
-    top:7%;
+    width:95%;
+    height:auto;
+    max-height:85%;
+    left:2.5%;
+    bottom:15px; /* Posisi motor di atas garis neon */
     object-fit:contain;
-    object-position:center;
-    filter:
-        drop-shadow(0 18px 18px rgba(0,0,0,.8))
-        drop-shadow(0 0 14px rgba(0,120,255,.18));
-    transition:.45s;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.9));
+    transition:.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .motor-card:hover .motor-image img{
-    transform:scale(1.06);
+    transform:scale(1.08) translateY(-5px);
+    filter: drop-shadow(0 20px 30px rgba(0,100,255,0.3));
 }
 
-/* LABEL */
+/* Label Kategori */
 .motor-label{
     position:absolute;
-    top:52px;
-    left:25px;
+    top:20px;
+    left:20px;
     z-index:5;
-    padding:7px 13px;
-    border:1px solid rgba(0,155,255,.5);
-    background:rgba(0,30,65,.65);
-    backdrop-filter:blur(8px);
+    padding:6px 12px;
+    border:1px solid rgba(0,155,255,.3);
+    background:rgba(0,20,50,.6);
+    backdrop-filter:blur(5px);
     color:#45b8ff;
-    font-size:11px;
+    font-size:10px;
     font-weight:700;
     letter-spacing:2px;
+    border-radius:4px;
 }
 
-/* INFO */
+/* Info Card */
 .motor-info{
     padding:24px;
+    background: linear-gradient(to bottom, #0a0e17, #080c14);
 }
 
 .category{
@@ -265,18 +275,20 @@ nav a:hover{
     letter-spacing:2px;
     font-weight:700;
     margin-bottom:8px;
+    text-transform:uppercase;
 }
 
 .motor-info h3{
-    font-size:25px;
+    font-size:24px;
     margin-bottom:10px;
+    font-weight:700;
 }
 
 .motor-info p{
     color:#8791a3;
     font-size:13px;
-    line-height:1.7;
-    min-height:44px;
+    line-height:1.6;
+    min-height:42px;
 }
 
 .bottom{
@@ -284,27 +296,34 @@ nav a:hover{
     display:flex;
     align-items:center;
     justify-content:space-between;
+    border-top:1px solid rgba(255,255,255,0.05);
+    padding-top:18px;
 }
 
 .price{
     font-size:18px;
     font-weight:700;
+    color:white;
 }
 
 .detail{
     border:1px solid #168fff;
     color:#168fff;
-    padding:9px 15px;
-    border-radius:7px;
+    padding:10px 20px;
+    border-radius:6px;
     font-size:12px;
     font-weight:700;
     text-decoration:none;
     transition:.3s;
+    cursor:pointer;
+    background:transparent;
+    display:inline-block;
 }
 
 .detail:hover{
     background:#168fff;
     color:white;
+    box-shadow: 0 0 15px rgba(22, 143, 255, 0.4);
 }
 
 /* FOOTER */
@@ -315,6 +334,7 @@ footer{
     color:#667083;
     text-align:center;
     font-size:12px;
+    background:#03050a;
 }
 
 /* RESPONSIVE */
@@ -322,7 +342,6 @@ footer{
     .motor-grid{
         grid-template-columns:repeat(2,1fr);
     }
-
     .hero h1{
         font-size:55px;
     }
@@ -332,21 +351,21 @@ footer{
     nav{
         display:none;
     }
-
     .hero{
         min-height:400px;
+        padding:60px 7%;
     }
-
     .hero h1{
-        font-size:45px;
+        font-size:42px;
     }
-
     .motor-grid{
         grid-template-columns:1fr;
     }
-
     .motor-image{
-        height:330px;
+        height:280px;
+    }
+    .model-bg{
+        font-size:60px;
     }
 }
 </style>
@@ -356,7 +375,6 @@ footer{
 
 <header>
     <div class="logo">YAMAHA</div>
-
     <nav>
         <a href="#">HOME</a>
         <a href="#motor">MOTOR</a>
@@ -364,289 +382,139 @@ footer{
     </nav>
 </header>
 
-
 <section class="hero">
     <div class="hero-content">
-
-        <div class="small-title">
-            YAMAHA INDONESIA
-        </div>
-
-        <h1>
-            REV<br>
-            <span>YOUR HEART.</span>
-        </h1>
-
-        <p>
-            Explore the Yamaha motorcycle line-up with
-            iconic design, modern technology and thrilling
-            performance for every rider.
-        </p>
-
+        <div class="small-title">YAMAHA INDONESIA</div>
+        <h1>REV<br><span>YOUR HEART.</span></h1>
+        <p>Explore the Yamaha motorcycle line-up with iconic design, modern technology and thrilling performance for every rider.</p>
     </div>
 </section>
 
-
 <section class="section" id="motor">
-
     <div class="section-title">
         <h2>Motorcycle Line Up</h2>
         <p>Temukan motor Yamaha yang sesuai dengan karakter kamu.</p>
     </div>
 
-
     <div class="motor-grid">
-
 
         <!-- NMAX -->
         <div class="motor-card">
-
             <div class="motor-image">
-
                 <div class="showroom-brand">YAMAHA</div>
                 <div class="model-bg">NMAX</div>
-
-                <div class="motor-label">
-                    MAXI
-                </div>
-
-                <img
-                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_NMAX_2026.jpg"
-                    alt="Yamaha NMAX"
-                    loading="lazy"
-                >
-
+                <div class="motor-label">MAXI</div>
+                <!-- Menggunakan link gambar statis yang valid -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Yamaha_NMAX_155_%282020%29_front_view.jpg/640px-Yamaha_NMAX_155_%282020%29_front_view.jpg" alt="Yamaha NMAX" loading="lazy">
             </div>
-
             <div class="motor-info">
-
                 <div class="category">MAXI YAMAHA</div>
-
-                <h3>NMAX</h3>
-
-                <p>
-                    Skutik premium dengan desain modern
-                    dan kenyamanan untuk perjalanan harian.
-                </p>
-
+                <h3>NMAX CONNECTED</h3>
+                <p>Skutik premium dengan desain modern dan kenyamanan untuk perjalanan harian.</p>
                 <div class="bottom">
                     <div class="price">Rp 33,7 Juta</div>
                     <a href="#" class="detail">DETAIL</a>
                 </div>
-
             </div>
-
         </div>
-
 
         <!-- AEROX -->
         <div class="motor-card">
-
             <div class="motor-image">
-
                 <div class="showroom-brand">YAMAHA</div>
                 <div class="model-bg">AEROX</div>
-
-                <div class="motor-label">
-                    SPORT
-                </div>
-
-                <img
-                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/2026_Yamaha_Aerox_155_SP_ABS.jpg"
-                    alt="Yamaha Aerox"
-                    loading="lazy"
-                >
-
+                <div class="motor-label">SPORT</div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Yamaha_Aerox_155_VVA_ABS_2021.jpg/640px-Yamaha_Aerox_155_VVA_ABS_2021.jpg" alt="Yamaha Aerox" loading="lazy">
             </div>
-
             <div class="motor-info">
-
                 <div class="category">SPORT SCOOTER</div>
-
                 <h3>AEROX ALPHA</h3>
-
-                <p>
-                    Sport scooter agresif dengan karakter
-                    sporty dan tampilan yang modern.
-                </p>
-
+                <p>Sport scooter agresif dengan karakter sporty dan tampilan yang modern.</p>
                 <div class="bottom">
                     <div class="price">Rp 29,9 Juta</div>
                     <a href="#" class="detail">DETAIL</a>
                 </div>
-
             </div>
-
         </div>
-
 
         <!-- R15 -->
         <div class="motor-card">
-
             <div class="motor-image">
-
                 <div class="showroom-brand">YAMAHA</div>
                 <div class="model-bg">R15</div>
-
-                <div class="motor-label">
-                    R SERIES
-                </div>
-
-                <img
-                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R15_v4_bike.jpg"
-                    alt="Yamaha R15"
-                    loading="lazy"
-                >
-
+                <div class="motor-label">R SERIES</div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Yamaha_YZF-R15_V3.0.jpg/640px-Yamaha_YZF-R15_V3.0.jpg" alt="Yamaha R15" loading="lazy">
             </div>
-
             <div class="motor-info">
-
                 <div class="category">SUPER SPORT</div>
-
-                <h3>R15</h3>
-
-                <p>
-                    Motor sport dengan DNA R-Series,
-                    aerodinamis dan berkarakter agresif.
-                </p>
-
+                <h3>R15 V4</h3>
+                <p>Motor sport dengan DNA R-Series, aerodinamis dan berkarakter agresif.</p>
                 <div class="bottom">
                     <div class="price">Rp 39,5 Juta</div>
                     <a href="#" class="detail">DETAIL</a>
                 </div>
-
             </div>
-
         </div>
-
 
         <!-- MT15 -->
         <div class="motor-card">
-
             <div class="motor-image">
-
                 <div class="showroom-brand">YAMAHA</div>
                 <div class="model-bg">MT-15</div>
-
-                <div class="motor-label">
-                    HYPER NAKED
-                </div>
-
-                <img
-                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_MT15_4.jpg"
-                    alt="Yamaha MT-15"
-                    loading="lazy"
-                >
-
+                <div class="motor-label">HYPER NAKED</div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Yamaha_MT-15_2019.jpg/640px-Yamaha_MT-15_2019.jpg" alt="Yamaha MT-15" loading="lazy">
             </div>
-
             <div class="motor-info">
-
                 <div class="category">HYPER NAKED</div>
-
-                <h3>MT-15</h3>
-
-                <p>
-                    Naked bike dengan desain agresif,
-                    ringan dan cocok untuk penggunaan harian.
-                </p>
-
+                <h3>MT-15 V2</h3>
+                <p>Naked bike dengan desain agresif, ringan dan cocok untuk penggunaan harian.</p>
                 <div class="bottom">
                     <div class="price">Rp 38,8 Juta</div>
                     <a href="#" class="detail">DETAIL</a>
                 </div>
-
             </div>
-
         </div>
-
 
         <!-- XMAX -->
         <div class="motor-card">
-
             <div class="motor-image">
-
                 <div class="showroom-brand">YAMAHA</div>
                 <div class="model-bg">XMAX</div>
-
-                <div class="motor-label">
-                    PREMIUM MAXI
-                </div>
-
-                <img
-                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_XMAX_2026.jpg"
-                    alt="Yamaha XMAX"
-                    loading="lazy"
-                >
-
+                <div class="motor-label">PREMIUM MAXI</div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Yamaha_XMAX_300_2018.jpg/640px-Yamaha_XMAX_300_2018.jpg" alt="Yamaha XMAX" loading="lazy">
             </div>
-
             <div class="motor-info">
-
                 <div class="category">MAXI YAMAHA</div>
-
-                <h3>XMAX</h3>
-
-                <p>
-                    Maxi scooter premium dengan bodi besar,
-                    nyaman dan cocok untuk touring.
-                </p>
-
+                <h3>XMAX 250</h3>
+                <p>Maxi scooter premium dengan bodi besar, nyaman dan cocok untuk touring.</p>
                 <div class="bottom">
                     <div class="price">Rp 66,5 Juta</div>
                     <a href="#" class="detail">DETAIL</a>
                 </div>
-
             </div>
-
         </div>
-
 
         <!-- FAZZIO -->
         <div class="motor-card">
-
             <div class="motor-image">
-
                 <div class="showroom-brand">YAMAHA</div>
                 <div class="model-bg">FAZZIO</div>
-
-                <div class="motor-label">
-                    CLASSY
-                </div>
-
-                <img
-                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/2022_Yamaha_Fazzio_Standard.png"
-                    alt="Yamaha Fazzio"
-                    loading="lazy"
-                >
-
+                <div class="motor-label">CLASSY</div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Yamaha_Fazzio_Hybrid_Connect_2022.jpg/640px-Yamaha_Fazzio_Hybrid_Connect_2022.jpg" alt="Yamaha Fazzio" loading="lazy">
             </div>
-
             <div class="motor-info">
-
                 <div class="category">CLASSY YAMAHA</div>
-
-                <h3>FAZZIO</h3>
-
-                <p>
-                    Skutik bergaya modern-retro dengan
-                    desain unik dan karakter stylish.
-                </p>
-
+                <h3>FAZZIO HYBRID</h3>
+                <p>Skutik bergaya modern-retro dengan desain unik dan karakter stylish.</p>
                 <div class="bottom">
                     <div class="price">Rp 22,6 Juta</div>
                     <a href="#" class="detail">DETAIL</a>
                 </div>
-
             </div>
-
         </div>
 
     </div>
-
 </section>
-
 
 <footer id="about">
     © 2026 YAMAHA — Premium Motorcycle Line Up
