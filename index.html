@@ -1,423 +1,1763 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yamaha Motor — Ride Your Way</title>
+  <title>Yamaha Atelier — Motor Showcase</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta
+    name="description"
+    content="Katalog motor Yamaha — NMAX, AEROX, Fazzio, R15, XSR, MT-25 dan R25."
+  >
 
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-        .hero-overlay {
-            background: linear-gradient(
-                90deg,
-                rgba(0,0,0,0.78),
-                rgba(0,0,0,0.35),
-                rgba(0,0,0,0.05)
-            );
-        }
+  <style>
 
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    :root {
+      --cream: #f4f4f2;
+      --white: #ffffff;
+      --black: #111318;
+      --gray: #6f737a;
+      --blue: #1464f4;
+      --line: rgba(17,19,24,.1);
+      --shadow: 0 20px 60px rgba(0,0,0,.08);
+    }
 
-        .card-hover:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-        }
-    </style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(244,244,242,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: auto;
+      min-height: 76px;
+      padding: 0 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      opacity: .7;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--blue);
+    }
+
+    .nav-action {
+      background: var(--blue);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      max-width: 1280px;
+      margin: auto;
+      padding: 28px;
+    }
+
+    .hero-box {
+      min-height: 620px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #10151f;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .65;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.82),
+          rgba(0,0,0,.35),
+          rgba(0,0,0,.05)
+        );
+    }
+
+    .hero-content {
+      position: absolute;
+      left: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      max-width: 650px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      color: #7da7ff;
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px,7vw,88px);
+      line-height: .98;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .hero-title span {
+      display: block;
+      font-style: italic;
+      color: #6f9fff;
+    }
+
+    .hero-description {
+      max-width: 520px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(255,255,255,.78);
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      border: none;
+      background: white;
+      color: var(--black);
+      padding: 14px 24px;
+      border-radius: 100px;
+      font-weight: 700;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,.5);
+      padding: 13px 24px;
+      border-radius: 100px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      max-width: 1280px;
+      margin: auto;
+      padding: 90px 28px 70px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .intro-small {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    .intro-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px,5vw,65px);
+      line-height: 1.08;
+      font-weight: 500;
+    }
+
+    .intro-text {
+      color: var(--gray);
+      max-width: 500px;
+      line-height: 1.9;
+    }
+
+    /* =========================
+       CATALOG
+    ========================= */
+
+    .catalog {
+      background: #e9eaec;
+      padding: 90px 0 110px;
+    }
+
+    .catalog-inner {
+      max-width: 1280px;
+      margin: auto;
+      padding: 0 28px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .search-box {
+      width: 260px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 13px 18px;
+      border-radius: 100px;
+      border: 1px solid var(--line);
+      background: white;
+      outline: none;
+      font-size: 13px;
+    }
+
+    /* FILTER */
+
+    .filters {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: transparent;
+      padding: 10px 18px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--black);
+      color: white;
+    }
+
+    .mobile-filter {
+      display: none;
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: white;
+      margin-bottom: 25px;
+    }
+
+    /* PRODUCTS */
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      transition: .35s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,.04);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0,0,0,.12);
+    }
+
+    .product-image {
+      height: 300px;
+      overflow: hidden;
+      background: #ddd;
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255,255,255,.9);
+      padding: 7px 11px;
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .product-info {
+      padding: 22px;
+    }
+
+    .product-category {
+      color: var(--gray);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .product-name {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .product-color {
+      color: var(--gray);
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .detail-btn {
+      border: none;
+      background: var(--black);
+      color: white;
+      padding: 9px 13px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       FEATURE
+    ========================= */
+
+    .feature {
+      max-width: 1280px;
+      margin: auto;
+      padding: 110px 28px;
+
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .feature-image {
+      height: 600px;
+      border-radius: 25px;
+      overflow: hidden;
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .feature-label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    .feature-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px,5vw,65px);
+      line-height: 1.05;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .feature-text {
+      color: var(--gray);
+      line-height: 1.9;
+      margin-bottom: 30px;
+    }
+
+    .feature-list {
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .feature-list li {
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      max-width: 1280px;
+      margin: auto;
+      padding: 0 28px 100px;
+    }
+
+    .cta-box {
+      background: var(--black);
+      color: white;
+      border-radius: 25px;
+      padding: 80px 60px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .cta-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px,5vw,62px);
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .cta-text {
+      margin-top: 15px;
+      color: rgba(255,255,255,.6);
+      max-width: 550px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #e2e3e5;
+      padding: 50px 28px 30px;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: auto;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+
+      padding-bottom: 35px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .footer-brand {
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .footer-description {
+      max-width: 350px;
+      color: var(--gray);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .copyright {
+      max-width: 1280px;
+      margin: 25px auto 0;
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.7);
+      backdrop-filter: blur(10px);
+      z-index: 2000;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .modal-box {
+      width: min(900px,100%);
+      max-height: 90vh;
+      overflow: auto;
+      background: var(--cream);
+      border-radius: 25px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      position: relative;
+    }
+
+    .modal-image {
+      min-height: 500px;
+    }
+
+    .modal-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modal-content {
+      padding: 45px;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+
+      width: 38px;
+      height: 38px;
+
+      border: none;
+      border-radius: 50%;
+      background: white;
+
+      font-size: 20px;
+      z-index: 2;
+    }
+
+    .modal-category {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+
+    .modal-title {
+      font-family: "Playfair Display", serif;
+      font-size: 45px;
+      line-height: 1;
+      margin: 12px 0;
+    }
+
+    .modal-color {
+      color: var(--gray);
+      margin-bottom: 25px;
+    }
+
+    .modal-description {
+      color: var(--gray);
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .specs {
+      border-top: 1px solid var(--line);
+      margin-bottom: 25px;
+    }
+
+    .spec {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+    }
+
+    .spec span {
+      color: var(--gray);
+    }
+
+    .modal-price {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      justify-content: center;
+      width: 100%;
+
+      background: #111;
+      color: white;
+      border-radius: 100px;
+      padding: 14px;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width:1000px) {
+
+      .products {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .feature {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-image {
+        height: 450px;
+      }
+
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+    }
+
+    @media (max-width:700px) {
+
+      .nav-inner {
+        padding: 0 18px;
+        min-height: 68px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-action {
+        padding: 10px 15px;
+      }
+
+      .hero {
+        padding: 15px 14px 0;
+      }
+
+      .hero-box {
+        min-height: 600px;
+        border-radius: 20px;
+      }
+
+      .hero-content {
+        left: 25px;
+        right: 25px;
+      }
+
+      .hero-title {
+        font-size: 52px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .intro {
+        padding: 75px 20px 55px;
+      }
+
+      .catalog {
+        padding: 70px 0;
+      }
+
+      .catalog-inner {
+        padding: 0 18px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-title {
+        font-size: 40px;
+      }
+
+      .search-box {
+        width: 100%;
+        margin-top: 25px;
+      }
+
+      .filters {
+        display: none;
+      }
+
+      .mobile-filter {
+        display: block;
+      }
+
+      .products {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 10px;
+      }
+
+      .product-image {
+        height: 190px;
+      }
+
+      .product-info {
+        padding: 15px;
+      }
+
+      .product-name {
+        font-size: 20px;
+      }
+
+      .product-price {
+        font-size: 11px;
+      }
+
+      .feature {
+        padding: 75px 20px;
+        gap: 40px;
+      }
+
+      .feature-image {
+        height: 390px;
+      }
+
+      .cta {
+        padding: 0 18px 70px;
+      }
+
+      .cta-box {
+        padding: 50px 28px;
+        display: block;
+      }
+
+      .cta .btn-primary {
+        display: inline-block;
+        margin-top: 25px;
+      }
+
+      footer {
+        padding: 45px 20px 25px;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+
+      .footer-links {
+        margin-top: 25px;
+      }
+
+      .modal-box {
+        grid-template-columns: 1fr;
+        max-height: 92vh;
+      }
+
+      .modal-image {
+        min-height: 280px;
+        max-height: 300px;
+      }
+
+      .modal-content {
+        padding: 30px 25px;
+      }
+
+      .modal-title {
+        font-size: 38px;
+      }
+
+    }
+
+  </style>
 </head>
 
-<body class="bg-white text-gray-900">
+<body>
 
-    <!-- NAVBAR -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
-        <nav class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
+<header class="navbar">
 
-            <a href="index.html" class="text-2xl font-black tracking-tight">
-                YAMAHA
-            </a>
+  <div class="nav-inner">
 
-            <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
-                <a href="index.html" class="hover:text-red-600 transition">Home</a>
-                <a href="katalog.html" class="hover:text-red-600 transition">Katalog</a>
-                <a href="promo.html" class="hover:text-red-600 transition">Promo</a>
-                <a href="tentang.html" class="hover:text-red-600 transition">Tentang</a>
-                <a href="kontak.html" class="hover:text-red-600 transition">Kontak</a>
-            </div>
+    <a href="#home" class="logo">
+      YAMAHA<span>.</span>
+    </a>
 
-            <a href="katalog.html"
-               class="hidden sm:inline-block bg-black text-white px-5 py-3 rounded-full text-sm font-bold hover:bg-red-600 transition">
-                Lihat Motor
-            </a>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#katalog">Katalog</a>
+      <a href="#story">Tentang</a>
+      <a href="#contact">Kontak</a>
+    </nav>
 
-        </nav>
-    </header>
+    <a
+      class="nav-action"
+      href="#contact"
+    >
+      Hubungi Kami
+    </a>
 
+  </div>
 
-    <!-- HERO -->
-    <main>
+</header>
 
-        <section class="relative min-h-screen flex items-center overflow-hidden bg-gray-950">
 
-            <img
-                src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85"
-                alt="Motor Yamaha"
-                class="absolute inset-0 w-full h-full object-cover opacity-75"
-            >
+<main id="home">
 
-            <div class="absolute inset-0 hero-overlay"></div>
+  <!-- HERO -->
 
-            <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 w-full pt-20">
+  <section class="hero">
 
-                <div class="max-w-2xl text-white">
+    <div class="hero-box">
 
-                    <p class="text-sm md:text-base font-bold tracking-[0.3em] uppercase mb-5 text-gray-300">
-                        Yamaha Motor Showcase
-                    </p>
+      <div class="hero-slide active">
 
-                    <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight">
-                        Ride Your Way.
-                    </h1>
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/NMAX155.jpg"
+          alt="Yamaha NMAX"
+        >
 
-                    <p class="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl">
-                        Temukan motor Yamaha dengan perpaduan desain sporty,
-                        teknologi modern, dan kenyamanan untuk perjalananmu.
-                    </p>
+        <div class="hero-overlay"></div>
 
-                    <div class="mt-9 flex flex-wrap gap-4">
+      </div>
 
-                        <a href="katalog.html"
-                           class="bg-white text-black px-7 py-4 rounded-full font-bold hover:bg-red-600 hover:text-white transition">
-                            Jelajahi Katalog
-                        </a>
+      <div class="hero-slide">
 
-                        <a href="promo.html"
-                           class="border border-white/60 text-white px-7 py-4 rounded-full font-bold hover:bg-white hover:text-black transition">
-                            Lihat Promo
-                        </a>
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Aerox.jpg"
+          alt="Yamaha Aerox"
+        >
 
-                    </div>
+        <div class="hero-overlay"></div>
 
-                </div>
+      </div>
 
-            </div>
-        </section>
+      <div class="hero-slide">
 
+        <img
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha%20R15.jpg"
+          alt="Yamaha R15"
+        >
 
-        <!-- INTRO -->
-        <section class="py-24 bg-white">
+        <div class="hero-overlay"></div>
 
-            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+      </div>
 
-                <div class="max-w-3xl">
 
-                    <p class="text-sm font-bold tracking-[0.25em] uppercase text-gray-500">
-                        Yamaha Collection
-                    </p>
+      <div class="hero-content">
 
-                    <h2 class="mt-4 text-4xl md:text-5xl font-black tracking-tight">
-                        Sporty dalam desain.
-                        <br>
-                        Nyaman dalam perjalanan.
-                    </h2>
+        <div class="eyebrow">
+          Yamaha Motor Showcase
+        </div>
 
-                    <p class="mt-6 text-gray-600 text-lg leading-relaxed">
-                        Pilih motor Yamaha yang sesuai dengan kebutuhan,
-                        gaya berkendara, dan aktivitas sehari-hari.
-                    </p>
+        <h1 class="hero-title">
+          Ride Your
+          <span>Way.</span>
+        </h1>
 
-                </div>
+        <p class="hero-description">
+          Temukan berbagai pilihan motor Yamaha
+          dengan karakter, desain, dan teknologi
+          yang sesuai dengan gaya berkendaramu.
+        </p>
 
+        <div class="hero-buttons">
 
-                <!-- PRODUCT CARDS -->
-                <div class="grid md:grid-cols-3 gap-7 mt-14">
+          <a
+            href="#katalog"
+            class="btn-primary"
+          >
+            Lihat Katalog
+          </a>
 
-                    <!-- NMAX -->
-                    <article class="card-hover border border-gray-200 rounded-3xl overflow-hidden bg-white">
-
-                        <div class="h-64 bg-gray-100 overflow-hidden">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?auto=format&fit=crop&w=1000&q=85"
-                                alt="Yamaha NMAX"
-                                class="w-full h-full object-cover"
-                            >
-
-                        </div>
-
-                        <div class="p-7">
-
-                            <p class="text-xs font-bold uppercase tracking-widest text-gray-500">
-                                Maxi Scooter
-                            </p>
-
-                            <h3 class="text-2xl font-black mt-2">
-                                Yamaha NMAX
-                            </h3>
-
-                            <p class="text-gray-600 mt-3 leading-relaxed">
-                                Skutik premium dengan desain modern dan
-                                kenyamanan untuk perjalanan harian.
-                            </p>
-
-                            <div class="mt-6 flex items-center justify-between">
-
-                                <span class="font-bold">
-                                    Mulai dari Rp 32 Jutaan
-                                </span>
-
-                                <a href="detail-nmax.html"
-                                   class="font-bold text-red-600 hover:text-black transition">
-                                    Detail →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- AEROX -->
-                    <article class="card-hover border border-gray-200 rounded-3xl overflow-hidden bg-white">
-
-                        <div class="h-64 bg-gray-100 overflow-hidden">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=1000&q=85"
-                                alt="Yamaha Aerox"
-                                class="w-full h-full object-cover"
-                            >
-
-                        </div>
-
-                        <div class="p-7">
-
-                            <p class="text-xs font-bold uppercase tracking-widest text-gray-500">
-                                Sport Scooter
-                            </p>
-
-                            <h3 class="text-2xl font-black mt-2">
-                                Yamaha Aerox
-                            </h3>
-
-                            <p class="text-gray-600 mt-3 leading-relaxed">
-                                Karakter sporty dengan tampilan agresif
-                                untuk pengguna yang aktif.
-                            </p>
-
-                            <div class="mt-6 flex items-center justify-between">
-
-                                <span class="font-bold">
-                                    Mulai dari Rp 29 Jutaan
-                                </span>
-
-                                <a href="detail-aerox.html"
-                                   class="font-bold text-red-600 hover:text-black transition">
-                                    Detail →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- FAZZIO -->
-                    <article class="card-hover border border-gray-200 rounded-3xl overflow-hidden bg-white">
-
-                        <div class="h-64 bg-gray-100 overflow-hidden">
-
-                            <img
-                                src="https://images.unsplash.com/photo-1558980394-0c4c4c3a8d9e?auto=format&fit=crop&w=1000&q=85"
-                                alt="Yamaha Fazzio"
-                                class="w-full h-full object-cover"
-                            >
-
-                        </div>
-
-                        <div class="p-7">
-
-                            <p class="text-xs font-bold uppercase tracking-widest text-gray-500">
-                                Hybrid Scooter
-                            </p>
-
-                            <h3 class="text-2xl font-black mt-2">
-                                Yamaha Fazzio
-                            </h3>
-
-                            <p class="text-gray-600 mt-3 leading-relaxed">
-                                Gaya modern dan praktis untuk menemani
-                                aktivitas sehari-hari.
-                            </p>
-
-                            <div class="mt-6 flex items-center justify-between">
-
-                                <span class="font-bold">
-                                    Mulai dari Rp 22 Jutaan
-                                </span>
-
-                                <a href="detail-fazzio.html"
-                                   class="font-bold text-red-600 hover:text-black transition">
-                                    Detail →
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- WHY YAMAHA -->
-        <section class="py-24 bg-gray-950 text-white">
-
-            <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-                    <div>
-
-                        <p class="text-sm font-bold tracking-[0.25em] uppercase text-gray-400">
-                            Why Yamaha
-                        </p>
-
-                        <h2 class="text-4xl md:text-5xl font-black mt-4">
-                            Dibuat untuk bergerak lebih jauh.
-                        </h2>
-
-                        <p class="mt-6 text-gray-400 text-lg leading-relaxed">
-                            Yamaha menghadirkan pilihan motor dengan
-                            karakter yang berbeda untuk berbagai kebutuhan
-                            dan gaya berkendara.
-                        </p>
-
-                    </div>
-
-
-                    <div class="grid sm:grid-cols-2 gap-4">
-
-                        <div class="border border-white/10 rounded-2xl p-6">
-                            <div class="text-2xl font-black">01</div>
-                            <h3 class="font-bold mt-4">Sporty Design</h3>
-                            <p class="text-gray-400 text-sm mt-2">
-                                Tampilan modern dan berkarakter.
-                            </p>
-                        </div>
-
-                        <div class="border border-white/10 rounded-2xl p-6">
-                            <div class="text-2xl font-black">02</div>
-                            <h3 class="font-bold mt-4">Modern Technology</h3>
-                            <p class="text-gray-400 text-sm mt-2">
-                                Teknologi untuk pengalaman berkendara.
-                            </p>
-                        </div>
-
-                        <div class="border border-white/10 rounded-2xl p-6">
-                            <div class="text-2xl font-black">03</div>
-                            <h3 class="font-bold mt-4">Daily Comfort</h3>
-                            <p class="text-gray-400 text-sm mt-2">
-                                Nyaman digunakan untuk aktivitas harian.
-                            </p>
-                        </div>
-
-                        <div class="border border-white/10 rounded-2xl p-6">
-                            <div class="text-2xl font-black">04</div>
-                            <h3 class="font-bold mt-4">Your Lifestyle</h3>
-                            <p class="text-gray-400 text-sm mt-2">
-                                Pilihan yang dapat disesuaikan denganmu.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- CTA -->
-        <section class="py-24">
-
-            <div class="max-w-5xl mx-auto px-5 text-center">
-
-                <p class="text-sm font-bold tracking-[0.25em] uppercase text-gray-500">
-                    Find Your Ride
-                </p>
-
-                <h2 class="text-4xl md:text-6xl font-black mt-4">
-                    Siap menemukan Yamaha pilihanmu?
-                </h2>
-
-                <p class="mt-6 text-gray-600 text-lg">
-                    Jelajahi katalog dan temukan motor yang sesuai
-                    dengan kebutuhanmu.
-                </p>
-
-                <a href="katalog.html"
-                   class="inline-block mt-8 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-red-600 transition">
-                    Lihat Semua Motor
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer class="bg-black text-white py-12">
-
-        <div class="max-w-7xl mx-auto px-5 lg:px-8">
-
-            <div class="flex flex-col md:flex-row justify-between gap-8">
-
-                <div>
-                    <h2 class="text-2xl font-black">YAMAHA</h2>
-                    <p class="text-gray-400 mt-3 max-w-sm">
-                        Yamaha Motor Showcase — project website
-                        multi-page dengan data contoh.
-                    </p>
-                </div>
-
-                <div class="flex flex-wrap gap-6 text-sm text-gray-400">
-                    <a href="index.html" class="hover:text-white">Home</a>
-                    <a href="katalog.html" class="hover:text-white">Katalog</a>
-     
-                <a href="promo.html" class="hover:text-white">Promo</a>
-                    <a href="tentang.html" class="hover:text-white">Tentang</a>
-                    <a href="kontak.html" class="hover:text-white">Kontak</a>
-                </div>
-
-            </div>
-
-            <div class="border-t border-white/10 mt-10 pt-6 text-sm text-gray-500">
-                © 2026 Yamaha Motor Showcase. Project website.
-            </div>
+          <a
+            href="#story"
+            class="btn-outline"
+          >
+            Tentang Yamaha
+          </a>
 
         </div>
 
-    </footer>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+
+  <section class="intro">
+
+    <div>
+
+      <div class="intro-small">
+        Yamaha Collection
+      </div>
+
+      <h2 class="intro-title">
+        Berbagai karakter.
+        <br>
+        Satu nama Yamaha.
+      </h2>
+
+    </div>
+
+    <p class="intro-text">
+      Dari skutik untuk aktivitas sehari-hari,
+      motor sport dengan karakter agresif,
+      hingga sport heritage dan adventure.
+      Temukan motor yang sesuai dengan gaya
+      berkendaramu.
+    </p>
+
+  </section>
+
+
+  <!-- CATALOG -->
+
+  <section
+    class="catalog"
+    id="katalog"
+  >
+
+    <div class="catalog-inner">
+
+      <div class="section-head">
+
+        <div>
+
+          <div class="section-label">
+            Yamaha Collection
+          </div>
+
+          <h2 class="section-title">
+            Find Your Yamaha
+          </h2>
+
+        </div>
+
+        <div class="search-box">
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari motor Yamaha..."
+            oninput="searchProducts()"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="filters">
+
+        <button
+          class="filter-btn active"
+          onclick="filterProducts('Semua',this)"
+        >
+          Semua
+        </button>
+
+        <button
+          class="filter-btn"
+          onclick="filterProducts('MAXi',this)"
+        >
+          MAXi
+        </button>
+
+        <button
+          class="filter-btn"
+          onclick="filterProducts('Matic',this)"
+        >
+          Matic
+        </button>
+
+        <button
+          class="filter-btn"
+          onclick="filterProducts('Sport',this)"
+        >
+          Sport
+        </button>
+
+        <button
+          class="filter-btn"
+          onclick="filterProducts('Heritage',this)"
+        >
+          Heritage
+        </button>
+
+        <button
+          class="filter-btn"
+          onclick="filterProducts('Adventure',this)"
+        >
+          Adventure
+        </button>
+
+      </div>
+
+
+      <select
+        class="mobile-filter"
+        onchange="filterMobile(this.value)"
+      >
+
+        <option value="Semua">
+          Semua Yamaha
+        </option>
+
+        <option value="MAXi">
+          MAXi
+        </option>
+
+        <option value="Matic">
+          Matic
+        </option>
+
+        <option value="Sport">
+          Sport
+        </option>
+
+        <option value="Heritage">
+          Heritage
+        </option>
+
+        <option value="Adventure">
+          Adventure
+        </option>
+
+      </select>
+
+
+      <div
+        class="products"
+        id="productGrid"
+      ></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURE -->
+
+  <section
+    class="feature"
+    id="story"
+  >
+
+    <div class="feature-image">
+
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha%20XSR%20155.jpg"
+        alt="Yamaha XSR 155"
+        loading="lazy"
+      >
+
+    </div>
+
+
+    <div>
+
+      <div class="feature-label">
+        Yamaha Philosophy
+      </div>
+
+      <h2 class="feature-title">
+        Berbeda karakter.
+        Tetap Yamaha.
+      </h2>
+
+      <p class="feature-text">
+        Yamaha menghadirkan berbagai pilihan motor
+        dengan karakter berbeda, mulai dari skutik,
+        sport, heritage hingga adventure.
+      </p>
+
+      <ul class="feature-list">
+
+        <li>
+          <span>Modern Design</span>
+          <strong>01</strong>
+        </li>
+
+        <li>
+          <span>Sport Performance</span>
+          <strong>02</strong>
+        </li>
+
+        <li>
+          <span>Everyday Mobility</span>
+          <strong>03</strong>
+        </li>
+
+        <li>
+          <span>Yamaha Technology</span>
+          <strong>04</strong>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section
+    class="cta"
+    id="contact"
+  >
+
+    <div class="cta-box">
+
+      <div>
+
+        <h2 class="cta-title">
+          Ready to find
+          <br>
+          your Yamaha?
+        </h2>
+
+        <p class="cta-text">
+          Temukan pilihan motor Yamaha yang
+          sesuai dengan kebutuhan dan gaya
+          berkendaramu.
+        </p>
+
+      </div>
+
+      <a
+        href="https://www.yamaha-motor.co.id/"
+        target="_blank"
+        class="btn-primary"
+      >
+        Kunjungi Yamaha
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+
+      <div class="footer-brand">
+        YAMAHA.
+      </div>
+
+      <p class="footer-description">
+        Yamaha Motor Showcase — katalog
+        berbagai model motor Yamaha.
+      </p>
+
+    </div>
+
+    <div class="footer-links">
+
+      <a href="#home">Home</a>
+      <a href="#katalog">Katalog</a>
+      <a href="#story">Tentang</a>
+      <a href="#contact">Kontak</a>
+
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Yamaha Motor Showcase — Project Website.
+    Foto kendaraan dari Wikimedia Commons.
+  </div>
+
+</footer>
+
+
+<!-- MODAL -->
+
+<div
+  class="modal"
+  id="productModal"
+  onclick="closeModalOutside(event)"
+>
+
+  <div class="modal-box">
+
+    <button
+      class="modal-close"
+      onclick="closeModal()"
+    >
+      ×
+    </button>
+
+    <div class="modal-image">
+
+      <img
+        id="modalImage"
+        src=""
+        alt=""
+      >
+
+    </div>
+
+    <div class="modal-content">
+
+      <div
+        class="modal-category"
+        id="modalCategory"
+      ></div>
+
+      <h2
+        class="modal-title"
+        id="modalTitle"
+      ></h2>
+
+      <div
+        class="modal-color"
+        id="modalColor"
+      ></div>
+
+      <p
+        class="modal-description"
+        id="modalDescription"
+      ></p>
+
+      <div class="specs">
+
+        <div class="spec">
+          <span>Brand</span>
+          <strong>Yamaha</strong>
+        </div>
+
+        <div class="spec">
+          <span>Kategori</span>
+          <strong id="modalSpecCategory"></strong>
+        </div>
+
+        <div class="spec">
+          <span>Status</span>
+          <strong>Available</strong>
+        </div>
+
+      </div>
+
+      <div
+        class="modal-price"
+        id="modalPrice"
+      ></div>
+
+      <a
+        id="modalYamaha"
+        href="https://www.yamaha-motor.co.id/"
+        target="_blank"
+        class="whatsapp-btn"
+      >
+        Lihat di Yamaha
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  const products = [
+
+    {
+      name: "Yamaha NMAX",
+      category: "MAXi",
+      color: "Black",
+      price: "Mulai Rp 34.565.000",
+      image:
+        "https://commons.wikimedia.org/wiki/Special:FilePath/NMAX155.jpg",
+      description:
+        "Skutik MAXi Yamaha dengan desain premium dan karakter nyaman untuk aktivitas sehari-hari."
+    },
+
+    {
+      name: "AEROX",
+      category: "Matic",
+      color: "Sport Scooter",
+      price: "Mulai Rp 30.700.000",
+      image:
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Aerox.jpg",
+      description:
+        "Sport scooter Yamaha dengan desain sporty dan karakter agresif."
+    },
+
+    {
+      name: "Yamaha Fazzio",
+      category: "Matic",
+      color: "Neo",
+      price: "Mulai Rp 22.820.000",
+      image:
+        "https://commons.wikimedia.org/wiki/Special:FilePath/2022%20Yamaha%20Fazzio%20Standard.png",
+      description:
+        "Skutik bergaya modern-retro dengan desain yang berbeda dan menarik."
+    },
+
+    {
+      name: "Yamaha R15",
+      category: "Sport",
+      color: "Red",
+      price: "Mulai Rp 42.200.000",
+      image:
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha%20R15.jpg",
+      description:
+        "Sport bike Yamaha dari keluarga R-Series dengan karakter sporty."
+    },
+
+    {
+      name: "Yamaha XSR 155",
+      category: "Heritage",
+      color: "Black",
+      price: "Mulai Rp 40.265.000",
+      image:
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha%20XSR%20155.jpg",
+      description:
+        "Motor sport heritage dengan perpaduan gaya klasik dan karakter modern."
+    },
+
+    {
+      name: "Yamaha MT-25",
+      category: "Sport",
+      color: "Naked Bike",
+      price: "Mulai Rp 66.450.000",
+      image:
+        "https://commons.wikimedia.org/wiki/Special:FilePath/2016%20Yamaha%20MT-25.JPG",
+      description:
+        "Naked bike Yamaha dengan desain agresif dan karakter sporty."
+    },
+
+    {
+      name: "Yamaha R25",
+      category: "Sport",
+      color: "Blue",
+      price: "Mulai Rp 76.250.000",
+      image:
+        "https://commons.wikimedia.org/wiki/Special:FilePath/YAMAHA%20R25.JPG",
+      description:
+        "Sport bike Yamaha dengan desain R-Series dan karakter performa."
+    },
+
+    {
+      name: "Yamaha WR155R",
+      category: "Adventure",
+      color: "Adventure",
+      price: "Mulai Rp 41.275.000",
+      image:
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha%20WR155R.jpg",
+      description:
+        "Motor adventure Yamaha untuk karakter berkendara yang lebih tangguh."
+    }
+
+  ];
+
+
+  let currentFilter = "Semua";
+
+
+  function renderProducts() {
+
+    const grid =
+      document.getElementById("productGrid");
+
+    const search =
+      document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const filtered =
+      products.filter(product => {
+
+        const matchesFilter =
+          currentFilter === "Semua" ||
+          product.category === currentFilter;
+
+        const matchesSearch =
+          product.name
+            .toLowerCase()
+            .includes(search) ||
+          product.category
+            .toLowerCase()
+            .includes(search) ||
+          product.color
+            .toLowerCase()
+            .includes(search);
+
+        return matchesFilter && matchesSearch;
+
+      });
+
+
+    if (filtered.length === 0) {
+
+      grid.innerHTML = `
+        <div style="
+          grid-column:1/-1;
+          padding:60px 20px;
+          text-align:center;
+          color:#777;
+        ">
+          <h3 style="
+            font-size:30px;
+            color:#111;
+            margin-bottom:10px;
+          ">
+            Motor tidak ditemukan
+          </h3>
+
+          <p>
+            Coba gunakan pencarian atau filter lain.
+          </p>
+        </div>
+      `;
+
+      return;
+
+    }
+
+
+    grid.innerHTML =
+      filtered.map(product => `
+
+        <article class="product-card">
+
+          <div class="product-image">
+
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+              onerror="
+                this.style.display='none';
+                this.parentElement.style.background='#ddd';
+              "
+            >
+
+            <div class="product-tag">
+              ${product.category}
+            </div>
+
+          </div>
+
+
+          <div class="product-info">
+
+            <div class="product-category">
+              ${product.category}
+            </div>
+
+            <h3 class="product-name">
+              ${product.name}
+            </h3>
+
+            <p class="product-color">
+              ${product.color}
+            </p>
+
+            <div class="product-bottom">
+
+              <div class="product-price">
+                ${product.price}
+              </div>
+
+              <button
+                class="detail-btn"
+                onclick="openModal(${products.indexOf(product)})"
+              >
+                Detail
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      `).join("");
+
+  }
+
+
+  function filterProducts(category, button) {
+
+    currentFilter = category;
+
+    document
+      .querySelectorAll(".filter-btn")
+      .forEach(btn =>
+        btn.classList.remove("active")
+      );
+
+    button.classList.add("active");
+
+    renderProducts();
+
+  }
+
+
+  function filterMobile(category) {
+
+    currentFilter = category;
+
+    renderProducts();
+
+  }
+
+
+  function searchProducts() {
+
+    renderProducts();
+
+  }
+
+
+  function openModal(index) {
+
+    const product = products[index];
+
+    document.getElementById("modalImage").src =
+      product.image;
+
+    document.getElementById("modalImage").alt =
+      product.name;
+
+    document.getElementById("modalCategory").textContent =
+      product.category;
+
+    document.getElementById("modalTitle").textContent =
+      product.name;
+
+    document.getElementById("modalColor").textContent =
+      "Karakter: " + product.color;
+
+    document.getElementById("modalDescription").textContent =
+      product.description;
+
+    document.getElementById("modalPrice").textContent =
+      product.price;
+
+    document.getElementById("modalSpecCategory").textContent =
+      product.category;
+
+    document
+      .getElementById("productModal")
+      .classList.add("show");
+
+    document.body.style.overflow = "hidden";
+
+  }
+
+
+  function closeModal() {
+
+    document
+      .getElementById("productModal")
+      .classList.remove("show");
+
+    document.body.style.overflow = "";
+
+  }
+
+
+  function closeModalOutside(event) {
+
+    if (
+      event.target ===
+      document.getElementById("productModal")
+    ) {
+      closeModal();
+    }
+
+  }
+
+
+  document.addEventListener(
+    "keydown",
+    function(event) {
+
+      if (event.key === "Escape") {
+        closeModal();
+      }
+
+    }
+  );
+
+
+  /* HERO SLIDER */
+
+  const slides =
+    document.querySelectorAll(".hero-slide");
+
+  let currentSlide = 0;
+
+  setInterval(() => {
+
+    slides[currentSlide]
+      .classList.remove("active");
+
+    currentSlide =
+      (currentSlide + 1) % slides.length;
+
+    slides[currentSlide]
+      .classList.add("active");
+
+  }, 4500);
+
+
+  renderProducts();
+
+</script>
 
 </body>
-                          </html>
+    </html>
