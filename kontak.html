@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak Yamaha</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-950 text-white">
+
+  <!-- NAVBAR -->
+  <nav class="bg-gray-950 border-b border-gray-800 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold italic">YAMAHA</a>
+
+      <div class="flex gap-5 text-sm">
+        <a href="index.html" class="hover:text-blue-400">Home</a>
+        <a href="katalog.html" class="hover:text-blue-400">Katalog</a>
+        <a href="promo.html" class="hover:text-blue-400">Promo</a>
+        <a href="tentang.html" class="hover:text-blue-400">Tentang</a>
+        <a href="kontak.html" class="text-blue-400">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 pb-10">
+    <p class="text-blue-400 font-semibold mb-2">
+      HUBUNGI KAMI
+    </p>
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-5">
+      Kontak
+    </h1>
+
+    <p class="text-gray-400 max-w-2xl">
+      Punya pertanyaan tentang produk atau ingin mendapatkan
+      informasi lebih lanjut? Hubungi kami melalui informasi
+      di bawah ini.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="max-w-7xl mx-auto px-6 pb-20">
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- INFO -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+
+        <h2 class="text-2xl font-bold mb-6">
+          Informasi Kontak
+        </h2>
+
+        <div class="space-y-6">
+
+          <div>
+            <p class="text-blue-400 font-semibold">WhatsApp</p>
+            <p class="text-gray-400 mt-1">
+              0812-3456-7890
+            </p>
+          </div>
+
+          <div>
+            <p class="text-blue-400 font-semibold">Email</p>
+            <p class="text-gray-400 mt-1">
+              info@yamaha-project.test
+            </p>
+          </div>
+
+          <div>
+            <p class="text-blue-400 font-semibold">Alamat</p>
+            <p class="text-gray-400 mt-1">
+              Sidoarjo, Jawa Timur
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+
+        <h2 class="text-2xl font-bold mb-6">
+          Kirim Pesan
+        </h2>
+
+        <form onsubmit="kirimPesan(event)" class="space-y-5">
+
+          <div>
+            <label class="block text-sm mb-2">
+              Nama
+            </label>
+
+            <input
+              type="text"
+              id="nama"
+              required
+              class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 outline-none focus:border-blue-500"
+              placeholder="Masukkan nama"
+            >
+          </div>
+
+          <div>
+            <label class="block text-sm mb-2">
+              Pesan
+            </label>
+
+            <textarea
+              id="pesan"
+              rows="5"
+              required
+              class="w-full bg-gray-950 border border-gray-700 rounded-xl px-4 py-3 outline-none focus:border-blue-500"
+              placeholder="Tulis pesan..."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 py-3 rounded-xl font-semibold transition"
+          >
+            Kirim Pesan
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <div class="mt-10 bg
