@@ -1,8 +1,13 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>YAMAHA — Premium Motor Line Up</title><style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YAMAHA Indonesia — Motorcycle Line Up</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap');
 
 *{
     margin:0;
@@ -16,13 +21,18 @@ html{
 
 body{
     font-family:'DM Sans',sans-serif;
-    background:#05070d;
+    background:#05070b;
     color:#fff;
 }
 
-/* HEADER */
+body.lock{
+    overflow:hidden;
+}
+
+/* ================= HEADER ================= */
+
 header{
-    height:78px;
+    height:76px;
     padding:0 7%;
     display:flex;
     align-items:center;
@@ -30,37 +40,43 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(3,6,12,.92);
-    backdrop-filter:blur(14px);
+    background:rgba(4,7,13,.94);
+    backdrop-filter:blur(18px);
     border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-    font-size:28px;
-    font-weight:800;
+    font-size:27px;
+    font-weight:900;
     letter-spacing:5px;
+}
+
+.logo span{
+    color:#159cff;
 }
 
 nav{
     display:flex;
-    gap:30px;
+    gap:32px;
 }
 
 nav a{
-    color:#aab2c1;
+    color:#aeb8c8;
     text-decoration:none;
-    font-size:13px;
-    font-weight:700;
-    transition:.3s;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+    transition:.25s;
 }
 
 nav a:hover{
     color:#159cff;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
-    min-height:540px;
+    min-height:590px;
     padding:90px 7%;
     display:flex;
     align-items:center;
@@ -68,39 +84,54 @@ nav a:hover{
     overflow:hidden;
 
     background:
-        radial-gradient(circle at 80% 50%,rgba(0,125,255,.30),transparent 35%),
-        linear-gradient(120deg,#02040a,#071326);
+        radial-gradient(circle at 78% 45%,rgba(0,125,255,.28),transparent 30%),
+        radial-gradient(circle at 95% 90%,rgba(0,75,180,.2),transparent 30%),
+        linear-gradient(125deg,#020409,#071326 55%,#02050a);
 }
 
-.hero::after{
+.hero:before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    right:-250px;
+    top:-180px;
+    border:1px solid rgba(21,156,255,.14);
+    border-radius:50%;
+    box-shadow:
+        0 0 0 80px rgba(21,156,255,.025),
+        0 0 0 160px rgba(21,156,255,.018);
+}
+
+.hero:after{
     content:"YAMAHA";
     position:absolute;
-    right:-40px;
-    bottom:-55px;
-    font-size:170px;
-    font-weight:800;
-    letter-spacing:10px;
+    right:-20px;
+    bottom:-60px;
+    font-size:160px;
+    font-weight:900;
+    letter-spacing:12px;
     color:rgba(255,255,255,.025);
 }
 
 .hero-content{
     position:relative;
-    z-index:2;
-    max-width:700px;
+    z-index:3;
+    max-width:720px;
 }
 
 .small-title{
     color:#159cff;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:4px;
-    margin-bottom:20px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:5px;
+    margin-bottom:22px;
 }
 
 .hero h1{
     font-family:'Playfair Display',serif;
-    font-size:72px;
-    line-height:1;
+    font-size:76px;
+    line-height:.98;
     margin-bottom:25px;
 }
 
@@ -110,20 +141,28 @@ nav a:hover{
 
 .hero p{
     max-width:600px;
-    color:#9ca7b8;
-    line-height:1.8;
+    color:#9ba7b8;
+    line-height:1.9;
+    font-size:15px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:32px;
+    flex-wrap:wrap;
 }
 
 .hero-button{
     display:inline-block;
-    margin-top:30px;
-    padding:13px 24px;
+    padding:14px 23px;
     background:#159cff;
     color:#fff;
     border-radius:8px;
     text-decoration:none;
-    font-size:12px;
-    font-weight:800;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
     transition:.3s;
     box-shadow:0 0 25px rgba(21,156,255,.25);
 }
@@ -133,171 +172,221 @@ nav a:hover{
     box-shadow:0 0 35px rgba(21,156,255,.5);
 }
 
-/* SECTION */
+.hero-button.secondary{
+    background:transparent;
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:none;
+}
+
+.hero-button.secondary:hover{
+    border-color:#159cff;
+    color:#159cff;
+}
+
+/* ================= SECTION ================= */
+
 .section{
-    padding:75px 7%;
+    padding:85px 7%;
 }
 
 .section-title{
-    margin-bottom:40px;
+    margin-bottom:42px;
+}
+
+.section-label{
+    color:#159cff;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:4px;
+    margin-bottom:10px;
 }
 
 .section-title h2{
-    font-size:38px;
+    font-size:40px;
+    line-height:1.1;
 }
 
 .section-title p{
-    margin-top:8px;
-    color:#7d8798;
+    margin-top:10px;
+    color:#788496;
 }
 
-/* GRID */
+/* ================= FILTER ================= */
+
+.filters{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.filter{
+    border:1px solid rgba(255,255,255,.1);
+    background:#0b1019;
+    color:#9ba7b8;
+    padding:9px 15px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:11px;
+    font-weight:800;
+    transition:.25s;
+}
+
+.filter:hover,
+.filter.active{
+    background:#159cff;
+    border-color:#159cff;
+    color:white;
+}
+
+/* ================= GRID ================= */
+
 .motor-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    gap:24px;
 }
 
-/* CARD */
+/* ================= CARD ================= */
+
 .motor-card{
     overflow:hidden;
-    background:#090d16;
+    background:linear-gradient(180deg,#0b1019,#080c13);
     border:1px solid rgba(255,255,255,.08);
     border-radius:18px;
     transition:.4s;
 }
 
 .motor-card:hover{
-    transform:translateY(-9px);
-    border-color:rgba(22,143,255,.7);
-    box-shadow:0 20px 55px rgba(0,100,255,.2);
+    transform:translateY(-8px);
+    border-color:rgba(21,156,255,.65);
+    box-shadow:0 25px 60px rgba(0,90,255,.17);
 }
 
-/* IMAGE AREA */
+/* ================= MOTOR IMAGE ================= */
+
 .motor-image{
-    height:310px;
+    height:285px;
     position:relative;
     overflow:hidden;
 
     background:
-        radial-gradient(ellipse at 50% 70%,rgba(0,125,255,.25),transparent 45%),
-        linear-gradient(180deg,#02050b,#07172c);
+        radial-gradient(ellipse at 50% 75%,rgba(0,133,255,.24),transparent 40%),
+        linear-gradient(180deg,#02050a 0%,#061224 70%,#071b32 100%);
 }
 
-.motor-image::after{
+.motor-image:before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:25px;
+    height:2px;
+    background:#159cff;
+    box-shadow:
+        0 0 7px #159cff,
+        0 0 20px #159cff,
+        0 0 40px rgba(21,156,255,.8);
+    z-index:3;
+}
+
+.motor-image:after{
     content:"";
     position:absolute;
     inset:0;
     background:linear-gradient(
         180deg,
-        transparent 55%,
-        rgba(0,0,0,.25)
+        transparent 45%,
+        rgba(0,0,0,.3)
     );
-    z-index:1;
-}
-
-.motor-image::before{
-    content:"";
-    position:absolute;
-    left:-5%;
-    width:110%;
-    bottom:35px;
-    height:2px;
-    background:#159cff;
-    box-shadow:
-        0 0 6px #159cff,
-        0 0 16px #159cff,
-        0 0 35px rgba(21,156,255,.9);
-    z-index:6;
+    z-index:2;
 }
 
 .showroom-brand{
     position:absolute;
-    top:20px;
-    left:24px;
-    z-index:7;
-    font-size:13px;
-    font-weight:800;
-    letter-spacing:5px;
+    top:18px;
+    left:20px;
+    z-index:5;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:4px;
     color:rgba(255,255,255,.55);
-}
-
-.model-bg{
-    position:absolute;
-    left:18px;
-    bottom:16px;
-    z-index:2;
-    font-size:72px;
-    font-weight:800;
-    letter-spacing:2px;
-    color:rgba(255,255,255,.045);
 }
 
 .motor-label{
     position:absolute;
-    top:52px;
-    left:24px;
-    z-index:7;
-    padding:7px 13px;
-    color:#48b7ff;
-    background:rgba(0,32,67,.75);
+    top:48px;
+    left:20px;
+    z-index:5;
+    padding:6px 10px;
+    color:#55bcff;
+    background:rgba(0,28,58,.75);
     border:1px solid rgba(21,156,255,.45);
     border-radius:5px;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:2px;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1.5px;
 }
 
-/* MOTOR PHOTO */
-.motor-image img{
+.model-bg{
     position:absolute;
-    z-index:5;
-    left:4%;
+    bottom:10px;
+    left:16px;
+    z-index:1;
+    font-size:60px;
+    font-weight:900;
+    color:rgba(255,255,255,.035);
+}
+
+/* ACTUAL MOTOR */
+
+.motor-photo{
+    position:absolute;
+    z-index:4;
     width:92%;
-    height:285px;
-    bottom:15px;
-
+    height:245px;
+    left:4%;
+    bottom:23px;
     object-fit:contain;
-    object-position:center bottom;
-
+    object-position:center;
     filter:
-        drop-shadow(0 18px 16px rgba(0,0,0,.9))
-        drop-shadow(0 0 12px rgba(0,120,255,.2));
-
-    transition:.55s;
+        drop-shadow(0 20px 15px rgba(0,0,0,.9))
+        drop-shadow(0 0 12px rgba(0,120,255,.18));
+    transition:.5s;
 }
 
-.motor-card:hover .motor-image img{
-    transform:scale(1.06);
+.motor-card:hover .motor-photo{
+    transform:scale(1.055);
 }
 
-/* INFO */
+/* ================= INFO ================= */
+
 .motor-info{
-    padding:24px;
+    padding:22px;
 }
 
 .category{
-    color:#168fff;
-    font-size:10px;
-    font-weight:700;
+    color:#159cff;
+    font-size:9px;
+    font-weight:900;
     letter-spacing:2px;
     margin-bottom:8px;
 }
 
 .motor-info h3{
-    font-size:25px;
-    margin-bottom:10px;
+    font-size:23px;
+    margin-bottom:9px;
 }
 
 .motor-info p{
-    min-height:45px;
-    color:#8791a3;
-    font-size:13px;
+    color:#818c9e;
+    font-size:12px;
     line-height:1.7;
+    min-height:43px;
 }
 
 .bottom{
-    margin-top:22px;
+    margin-top:20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -305,65 +394,64 @@ nav a:hover{
 }
 
 .price{
-    font-size:16px;
-    font-weight:700;
+    font-size:14px;
+    font-weight:800;
 }
 
 .detail{
-    padding:9px 16px;
-    color:#168fff;
+    padding:9px 15px;
+    color:#159cff;
     background:transparent;
-    border:1px solid #168fff;
+    border:1px solid #159cff;
     border-radius:7px;
-    font-size:11px;
-    font-weight:700;
+    font-size:10px;
+    font-weight:900;
     cursor:pointer;
     transition:.3s;
 }
 
 .detail:hover{
-    background:#168fff;
-    color:#fff;
-    box-shadow:0 0 20px rgba(22,143,255,.4);
+    color:white;
+    background:#159cff;
+    box-shadow:0 0 20px rgba(21,156,255,.4);
 }
 
-/* PROMO */
+/* ================= PROMO ================= */
+
 .promo-section{
-    padding:75px 7%;
+    padding:85px 7%;
     background:
-        radial-gradient(circle at 20% 50%,rgba(0,125,255,.15),transparent 35%),
-        #070b13;
+        radial-gradient(circle at 20% 50%,rgba(0,125,255,.13),transparent 32%),
+        #070b12;
 }
 
 .promo-box{
     display:grid;
-    grid-template-columns:1.5fr 1fr;
-    gap:30px;
+    grid-template-columns:1.2fr 1fr;
+    gap:35px;
     padding:45px;
     border-radius:22px;
-
-    background:linear-gradient(135deg,#07182e,#090d16);
-
+    background:linear-gradient(135deg,#071a32,#090e17);
     border:1px solid rgba(21,156,255,.25);
-    box-shadow:0 20px 60px rgba(0,0,0,.3);
 }
 
 .promo-text span{
     color:#159cff;
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:3px;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:4px;
 }
 
 .promo-text h2{
     margin-top:12px;
-    font-size:40px;
+    font-size:42px;
 }
 
 .promo-text p{
     margin-top:15px;
-    color:#9ca7b8;
+    color:#98a4b5;
     line-height:1.8;
+    max-width:600px;
 }
 
 .promo-list{
@@ -376,104 +464,118 @@ nav a:hover{
     border-radius:12px;
     background:rgba(255,255,255,.045);
     border:1px solid rgba(255,255,255,.08);
+    cursor:pointer;
     transition:.3s;
 }
 
 .promo-item:hover{
-    transform:translateX(5px);
-    border-color:rgba(21,156,255,.4);
+    transform:translateX(6px);
+    border-color:rgba(21,156,255,.5);
+    background:rgba(21,156,255,.07);
 }
 
 .promo-item strong{
-    color:#fff;
+    font-size:13px;
 }
 
 .promo-item small{
     display:block;
-    color:#8791a3;
-    margin-top:5px;
+    color:#7f8a9b;
+    margin-top:6px;
     line-height:1.5;
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
+
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    z-index:2000;
-    background:rgba(0,0,0,.78);
-    backdrop-filter:blur(8px);
+    z-index:3000;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(10px);
     align-items:center;
     justify-content:center;
     padding:20px;
 }
 
+.modal.show{
+    display:flex;
+}
+
 .modal-content{
     width:100%;
-    max-width:500px;
-    background:#0a0f19;
+    max-width:520px;
+    max-height:90vh;
+    overflow:auto;
+    background:#0a101a;
     border:1px solid rgba(21,156,255,.4);
     border-radius:20px;
-    padding:30px;
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.7),
-        0 0 30px rgba(21,156,255,.12);
-    animation:popup .3s ease;
+    padding:28px;
+    box-shadow:0 30px 100px rgba(0,0,0,.8);
+    animation:popup .25s ease;
 }
 
 @keyframes popup{
     from{
         opacity:0;
-        transform:scale(.9);
+        transform:translateY(20px) scale(.96);
     }
     to{
         opacity:1;
-        transform:scale(1);
+        transform:translateY(0) scale(1);
     }
 }
 
 .modal-top{
     display:flex;
+    align-items:flex-start;
     justify-content:space-between;
-    align-items:center;
 }
 
 .modal-top h2{
-    font-size:28px;
+    font-size:29px;
+}
+
+.modal-category{
+    color:#159cff;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:2px;
+    margin-top:6px;
 }
 
 .close{
-    width:35px;
-    height:35px;
+    width:36px;
+    height:36px;
     border-radius:50%;
-    border:1px solid rgba(255,255,255,.15);
-    background:#111722;
+    border:1px solid rgba(255,255,255,.13);
+    background:#111824;
     color:#fff;
     font-size:20px;
     cursor:pointer;
 }
 
-.modal-category{
-    color:#159cff;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:2px;
-    margin-top:8px;
+.modal-description{
+    color:#8e9aac;
+    font-size:13px;
+    line-height:1.7;
+    margin-top:20px;
 }
 
 .specs{
-    margin-top:25px;
+    margin-top:20px;
     display:grid;
-    gap:12px;
+    gap:10px;
 }
 
 .spec{
     display:flex;
     justify-content:space-between;
-    padding:13px 15px;
-    background:rgba(255,255,255,.04);
-    border-radius:8px;
     gap:15px;
+    padding:13px 15px;
+    border-radius:8px;
+    background:rgba(255,255,255,.04);
 }
 
 .spec span:first-child{
@@ -481,35 +583,37 @@ nav a:hover{
 }
 
 .spec span:last-child{
-    font-weight:700;
+    font-weight:800;
     text-align:right;
 }
 
 .modal-price{
-    margin-top:22px;
-    font-size:22px;
-    font-weight:800;
+    margin-top:20px;
     color:#159cff;
+    font-size:21px;
+    font-weight:900;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
     padding:40px 7%;
     text-align:center;
     border-top:1px solid rgba(255,255,255,.08);
-    color:#657083;
-    font-size:12px;
+    color:#667183;
+    font-size:11px;
 }
 
-/* TABLET */
-@media(max-width:1000px){
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1050px){
 
     .motor-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
     .hero h1{
-        font-size:58px;
+        font-size:62px;
     }
 
     .promo-box{
@@ -517,16 +621,15 @@ footer{
     }
 }
 
-/* MOBILE */
 @media(max-width:650px){
 
     header{
-        height:70px;
+        height:68px;
         padding:0 5%;
     }
 
     .logo{
-        font-size:23px;
+        font-size:22px;
     }
 
     nav{
@@ -534,16 +637,20 @@ footer{
     }
 
     .hero{
-        min-height:460px;
+        min-height:500px;
         padding:70px 6%;
     }
 
     .hero h1{
-        font-size:45px;
+        font-size:47px;
+    }
+
+    .hero p{
+        font-size:13px;
     }
 
     .section{
-        padding:55px 5%;
+        padding:60px 5%;
     }
 
     .section-title h2{
@@ -555,19 +662,11 @@ footer{
     }
 
     .motor-image{
-        height:280px;
-    }
-
-    .model-bg{
-        font-size:60px;
-    }
-
-    .motor-image img{
-        height:250px;
+        height:285px;
     }
 
     .promo-section{
-        padding:55px 5%;
+        padding:60px 5%;
     }
 
     .promo-box{
@@ -575,428 +674,736 @@ footer{
     }
 
     .promo-text h2{
-        font-size:30px;
+        font-size:32px;
     }
 }
-</style></head><body><header><div class="logo">YAMAHA</div>
+</style>
+</head>
 
-<nav>
-    <a href="#">HOME</a>
-    <a href="#motor">MOTOR</a>
-    <a href="#promo">PROMO</a>
-    <a href="#about">ABOUT</a>
-</nav>
+<body>
 
-</header><!-- HERO --><section class="hero"><div class="hero-content">
+<!-- ================= HEADER ================= -->
 
-    <div class="small-title">
-        YAMAHA INDONESIA
+<header>
+
+    <div class="logo">
+        YAMAHA<span>.</span>
     </div>
 
-    <h1>
-        REV<br>
-        <span>YOUR HEART.</span>
-    </h1>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#motor">MOTOR</a>
+        <a href="#promo">PROMO</a>
+        <a href="#about">ABOUT</a>
+    </nav>
 
-    <p>
-        Explore the Yamaha motorcycle line-up
-        with iconic design, modern technology
-        and thrilling performance for every rider.
-    </p>
+</header>
 
-    <a href="#motor" class="hero-button">
-        EXPLORE MOTOR
-    </a>
 
-</div>
+<!-- ================= HERO ================= -->
 
-</section><!-- MOTOR --><section class="section" id="motor"><div class="section-title">
-    <h2>Motorcycle Line Up</h2>
-    <p>
-        Temukan motor Yamaha yang sesuai dengan karakter kamu.
-    </p>
-</div>
+<section class="hero" id="home">
 
-<div class="motor-grid">
+    <div class="hero-content">
 
-    <!-- NMAX -->
-    <div class="motor-card">
-
-        <div class="motor-image">
-
-            <div class="showroom-brand">YAMAHA</div>
-            <div class="model-bg">NMAX</div>
-            <div class="motor-label">MAXI</div>
-
-            <img
-                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_NMAX_2026.jpg"
-                alt="Yamaha NMAX"
-                onerror="this.src='https://placehold.co/1000x600/02050b/159cff?text=YAMAHA+NMAX'"
-            >
-
+        <div class="small-title">
+            YAMAHA MOTOR INDONESIA
         </div>
 
-        <div class="motor-info">
-
-            <div class="category">MAXI YAMAHA</div>
-
-            <h3>NMAX</h3>
-
-            <p>
-                Skutik premium dengan desain modern
-                dan kenyamanan untuk perjalanan harian.
-            </p>
-
-            <div class="bottom">
-
-                <div class="price">
-                    Rp 33,7 Juta
-                </div>
-
-                <button class="detail"
-                onclick="showDetail(
-                'NMAX',
-                'MAXI YAMAHA',
-                '155 cc',
-                'Automatic',
-                '11.3 kW',
-                'Rp 33,7 Juta'
-                )">
-                    DETAIL
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- FAZZIO -->
-    <div class="motor-card">
-
-        <div class="motor-image">
-
-            <div class="showroom-brand">YAMAHA</div>
-            <div class="model-bg">FAZZIO</div>
-            <div class="motor-label">HYBRID</div>
-
-            <img
-                src="https://www.yamaha-motor.co.id/assets/images/product/fazzio/fazzio-main.png"
-                alt="Yamaha Fazzio"
-                onerror="this.src='https://placehold.co/1000x600/02050b/159cff?text=YAMAHA+FAZZIO'"
-            >
-
-        </div>
-
-        <div class="motor-info">
-
-            <div class="category">CLASSY YAMAHA</div>
-
-            <h3>FAZZIO</h3>
-
-            <p>
-                Skutik retro-modern dengan desain
-                stylish dan mesin Blue Core Hybrid 125 cc.
-            </p>
-
-            <div class="bottom">
-
-                <div class="price">
-                    Mulai Rp 22,82 Juta
-                </div>
-
-                <button class="detail"
-                onclick="showDetail(
-                'FAZZIO',
-                'CLASSY YAMAHA',
-                '124.86 cc',
-                'V-Belt Otomatis',
-                '6.2 kW',
-                'Mulai Rp 22.820.000'
-                )">
-                    DETAIL
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- R15 -->
-    <div class="motor-card">
-
-        <div class="motor-image">
-
-            <div class="showroom-brand">YAMAHA</div>
-            <div class="model-bg">R15</div>
-            <div class="motor-label">R SERIES</div>
-
-            <img
-                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R15.jpg"
-                alt="Yamaha R15"
-                onerror="this.src='https://placehold.co/1000x600/02050b/159cff?text=YAMAHA+R15'"
-            >
-
-        </div>
-
-        <div class="motor-info">
-
-            <div class="category">SUPER SPORT</div>
-
-            <h3>R15 CONNECTED</h3>
-
-            <p>
-                Motor sport R-Series dengan mesin 155 cc,
-                VVA dan teknologi konektivitas Yamaha.
-            </p>
-
-            <div class="bottom">
-
-                <div class="price">
-                    Rp 42,2 Juta
-                </div>
-
-                <button class="detail"
-                onclick="showDetail(
-                'R15 Connected',
-                'SUPER SPORT',
-                '155.09 cc',
-                'Manual 6-Speed',
-                '14.2 kW',
-                'Rp 42.200.000'
-                )">
-                    DETAIL
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- MT15 -->
-    <div class="motor-card">
-
-        <div class="motor-image">
-
-            <div class="showroom-brand">YAMAHA</div>
-            <div class="model-bg">MT-15</div>
-            <div class="motor-label">HYPER NAKED</div>
-
-            <img
-                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_MT-15.jpg"
-                alt="Yamaha MT-15"
-                onerror="this.src='https://placehold.co/1000x600/02050b/159cff?text=YAMAHA+MT-15'"
-            >
-
-        </div>
-
-        <div class="motor-info">
-
-            <div class="category">HYPER NAKED</div>
-
-            <h3>MT-15</h3>
-
-            <p>
-                Naked bike dengan desain agresif,
-                ringan dan cocok untuk penggunaan harian.
-            </p>
-
-            <div class="bottom">
-
-                <div class="price">
-                    Rp 38,8 Juta
-                </div>
-
-                <button class="detail"
-                onclick="showDetail(
-                'MT-15',
-                'HYPER NAKED',
-                '155 cc',
-                '6-Speed',
-                '14.2 kW',
-                'Rp 38,8 Juta'
-                )">
-                    DETAIL
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- R15 V3 -->
-    <div class="motor-card">
-
-        <div class="motor-image">
-
-            <div class="showroom-brand">YAMAHA</div>
-            <div class="model-bg">R15 V3</div>
-            <div class="motor-label">R SERIES</div>
-
-            <img
-                src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R15_V3.0.jpg"
-                alt="Yamaha R15 V3"
-                onerror="this.src='https://placehold.co/1000x600/02050b/159cff?text=YAMAHA+R15+V3'"
-            >
-
-        </div>
-
-        <div class="motor-info">
-
-            <div class="category">SUPER SPORT • GENERASI TERDAHULU</div>
-
-            <h3>R15 V3</h3>
-
-            <p>
-                Generasi R-Series terdahulu dengan
-                mesin 155 cc dan transmisi manual 6-percepatan.
-            </p>
-
-            <div class="bottom">
-
-                <div class="price">
-                    Harga tidak tersedia
-                </div>
-
-                <button class="detail"
-                onclick="showDetail(
-                'R15 V3',
-                'SUPER SPORT • GENERASI TERDAHULU',
-                '155 cc',
-                'Manual 6-Speed',
-                '14.2 kW',
-                'Harga resmi saat ini tidak tersedia'
-                )">
-                    DETAIL
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-</div>
-
-</section><!-- PROMO --><section class="promo-section" id="promo"><div class="promo-box">
-
-    <div class="promo-text">
-
-        <span>YAMAHA SPECIAL OFFER</span>
-
-        <h2>Promo Yamaha</h2>
+        <h1>
+            REV<br>
+            <span>YOUR HEART.</span>
+        </h1>
 
         <p>
-            Temukan berbagai program dan penawaran Yamaha.
-            Detail promo dapat berbeda berdasarkan model,
-            periode, wilayah, dan dealer.
+            Jelajahi berbagai pilihan motor Yamaha
+            dengan desain ikonik, teknologi modern,
+            dan performa yang dirancang untuk berbagai
+            karakter pengendara.
         </p>
 
-        <a
-            href="https://www.yamaha-motor.co.id/news"
-            target="_blank"
-            class="hero-button">
-            CEK INFO YAMAHA
-        </a>
+        <div class="hero-buttons">
 
-    </div>
+            <a href="#motor" class="hero-button">
+                EXPLORE MOTOR
+            </a>
 
-    <div class="promo-list">
+            <a href="#promo" class="hero-button secondary">
+                LIHAT PROMO
+            </a>
 
-        <div class="promo-item">
-            <strong>🎁 Program Khusus</strong>
-            <small>
-                Penawaran tertentu dapat tersedia pada periode
-                dan model yang berbeda.
-            </small>
-        </div>
-
-        <div class="promo-item">
-            <strong>💳 Pilihan Pembiayaan</strong>
-            <small>
-                Tersedia program pembiayaan melalui jaringan
-                dealer dan perusahaan pembiayaan.
-            </small>
-        </div>
-
-        <div class="promo-item">
-            <strong>⚡ Special Offer</strong>
-            <small>
-                Cek informasi terbaru dari Yamaha sebelum
-                melakukan pembelian.
-            </small>
         </div>
 
     </div>
 
-</div>
+</section>
 
-</section><!-- DETAIL MODAL --><div class="modal" id="detailModal"><div class="modal-content">
 
-    <div class="modal-top">
+<!-- ================= MOTOR ================= -->
 
-        <div>
-            <h2 id="modalName">NMAX</h2>
+<section class="section" id="motor">
 
-            <div
-                class="modal-category"
-                id="modalCategory">
-                MAXI YAMAHA
-            </div>
+    <div class="section-title">
+
+        <div class="section-label">
+            YAMAHA LINE UP
         </div>
 
-        <button
-            class="close"
-            onclick="closeDetail()">
-            ×
+        <h2>Motorcycle Collection</h2>
+
+        <p>
+            Pilih motor berdasarkan kategori dan karakter yang kamu suka.
+        </p>
+
+    </div>
+
+
+    <div class="filters">
+
+        <button class="filter active" onclick="filterMotor('all',this)">
+            SEMUA
+        </button>
+
+        <button class="filter" onclick="filterMotor('maxi',this)">
+            MAXI
+        </button>
+
+        <button class="filter" onclick="filterMotor('classy',this)">
+            CLASSY
+        </button>
+
+        <button class="filter" onclick="filterMotor('sport',this)">
+            SPORT
+        </button>
+
+        <button class="filter" onclick="filterMotor('naked',this)">
+            NAKED
         </button>
 
     </div>
 
 
-    <div class="specs">
+    <div class="motor-grid">
 
-        <div class="spec">
-            <span>Mesin</span>
-            <span id="modalEngine">155 cc</span>
+
+        <!-- NMAX -->
+
+        <div class="motor-card" data-category="maxi">
+
+            <div class="motor-image">
+
+                <div class="showroom-brand">YAMAHA</div>
+                <div class="motor-label">MAXI</div>
+                <div class="model-bg">NMAX</div>
+
+                <img
+                    class="motor-photo"
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_NMAX_2026.jpg"
+                    alt="Yamaha NMAX"
+                    onerror="imageFallback(this,'NMAX')"
+                >
+
+            </div>
+
+            <div class="motor-info">
+
+                <div class="category">MAXI YAMAHA</div>
+
+                <h3>NMAX</h3>
+
+                <p>
+                    Skutik premium dengan desain modern
+                    dan kenyamanan untuk perjalanan harian.
+                </p>
+
+                <div class="bottom">
+
+                    <div class="price">
+                        Rp 33,7 Juta
+                    </div>
+
+                    <button class="detail"
+                        onclick="showDetail(
+                        'NMAX',
+                        'MAXI YAMAHA',
+                        '155 cc',
+                        'Automatic',
+                        '11.3 kW',
+                        'Rp 33,7 Juta',
+                        'Skutik premium Yamaha untuk perjalanan harian dengan desain modern dan nyaman.'
+                        )">
+                        DETAIL
+                    </button>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="spec">
-            <span>Transmisi</span>
-            <span id="modalTransmission">
-                Automatic
-            </span>
+
+        <!-- AEROX -->
+
+        <div class="motor-card" data-category="maxi">
+
+            <div class="motor-image">
+
+                <div class="showroom-brand">YAMAHA</div>
+                <div class="motor-label">MAXI SPORT</div>
+                <div class="model-bg">AEROX</div>
+
+                <img
+                    class="motor-photo"
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_Aerox_155.jpg"
+                    alt="Yamaha Aerox"
+                    onerror="imageFallback(this,'AEROX')"
+                >
+
+            </div>
+
+            <div class="motor-info">
+
+                <div class="category">MAXI SPORT</div>
+
+                <h3>AEROX</h3>
+
+                <p>
+                    Skutik sporty dengan karakter agresif
+                    dan desain aerodinamis.
+                </p>
+
+                <div class="bottom">
+
+                    <div class="price">
+                        Rp 28 Jutaan
+                    </div>
+
+                    <button class="detail"
+                        onclick="showDetail(
+                        'AEROX',
+                        'MAXI SPORT',
+                        '155 cc',
+                        'Automatic',
+                        '11.3 kW',
+                        'Rp 28 Jutaan',
+                        'Skutik sporty dengan tampilan agresif dan karakter berkendara yang dinamis.'
+                        )">
+                        DETAIL
+                    </button>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="spec">
-            <span>Tenaga</span>
-            <span id="modalPower">
-                11.3 kW
-            </span>
+
+        <!-- FAZZIO -->
+
+        <div class="motor-card" data-category="classy">
+
+            <div class="motor-image">
+
+                <div class="showroom-brand">YAMAHA</div>
+                <div class="motor-label">CLASSY</div>
+                <div class="model-bg">FAZZIO</div>
+
+                <img
+                    class="motor-photo"
+                    src="https://www.yamaha-motor.co.id/assets/images/product/fazzio/fazzio-main.png"
+                    alt="Yamaha Fazzio"
+                    onerror="imageFallback(this,'FAZZIO')"
+                >
+
+            </div>
+
+            <div class="motor-info">
+
+                <div class="category">CLASSY YAMAHA</div>
+
+                <h3>FAZZIO</h3>
+
+                <p>
+                    Skutik retro-modern dengan desain
+                    stylish untuk penggunaan sehari-hari.
+                </p>
+
+                <div class="bottom">
+
+                    <div class="price">
+                        Rp 22,8 Jutaan
+                    </div>
+
+                    <button class="detail"
+                        onclick="showDetail(
+                        'FAZZIO',
+                        'CLASSY YAMAHA',
+                        '124.86 cc',
+                        'V-Belt Otomatis',
+                        '6.2 kW',
+                        'Mulai Rp 22,8 Jutaan',
+                        'Skutik bergaya modern-retro yang mengutamakan desain dan kepraktisan.'
+                        )">
+                        DETAIL
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GRAND FILANO -->
+
+        <div class="motor-card" data-category="classy">
+
+            <div class="motor-image">
+
+                <div class="showroom-brand">YAMAHA</div>
+                <div class="motor-label">CLASSY</div>
+                <div class="model-bg">FILANO</div>
+
+                <img
+                    class="motor-photo"
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_Grand_Filano.jpg"
+                    alt="Yamaha Grand Filano"
+                    onerror="imageFallback(this,'FILANO')"
+                >
+
+            </div>
+
+            <div class="motor-info">
+
+                <div class="category">CLASSY YAMAHA</div>
+
+                <h3>GRAND FILANO</h3>
+
+                <p>
+                    Skutik premium bergaya elegan dengan
+                    desain klasik dan teknologi modern.
+                </p>
+
+                <div class="bottom">
+
+                    <div class="price">
+                        Rp 27 Jutaan
+                    </div>
+
+                    <button class="detail"
+                        onclick="showDetail(
+                        'GRAND FILANO',
+                        'CLASSY YAMAHA',
+                        '124.86 cc',
+                        'Automatic',
+                        '6.2 kW',
+                        'Rp 27 Jutaan',
+                        'Skutik classy dengan perpaduan desain elegan dan teknologi modern.'
+                        )">
+                        DETAIL
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- R15 -->
+
+        <div class="motor-card" data-category="sport">
+
+            <div class="motor-image">
+
+                <div class="showroom-brand">YAMAHA</div>
+                <div class="motor-label">R SERIES</div>
+                <div class="model-bg">R15</div>
+
+                <img
+                    class="motor-photo"
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R15.jpg"
+                    alt="Yamaha R15"
+                    onerror="imageFallback(this,'R15')"
+                >
+
+            </div>
+
+            <div class="motor-info">
+
+                <div class="category">SUPER SPORT</div>
+
+                <h3>R15 CONNECTED</h3>
+
+                <p>
+                    Motor sport R-Series dengan karakter
+                    agresif dan teknologi modern.
+                </p>
+
+                <div class="bottom">
+
+                    <div class="price">
+                        Rp 42,2 Juta
+                    </div>
+
+                    <button class="detail"
+                        onclick="showDetail(
+                        'R15 CONNECTED',
+                        'SUPER SPORT',
+                        '155.09 cc',
+                        'Manual 6-Speed',
+                        '14.2 kW',
+                        'Rp 42,2 Juta',
+                        'Motor sport R-Series dengan desain agresif dan performa tinggi di kelasnya.'
+                        )">
+                        DETAIL
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- R25 -->
+
+        <div class="motor-card" data-category="sport">
+
+            <div class="motor-image">
+
+                <div class="showroom-brand">YAMAHA</div>
+                <div class="motor-label">R SERIES</div>
+                <div class="model-bg">R25</div>
+
+                <img
+                    class="motor-photo"
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R25.jpg"
+                    alt="Yamaha R25"
+                    onerror="imageFallback(this,'R25')"
+                >
+
+            </div>
+
+            <div class="motor-info">
+
+                <div class="category">SUPER SPORT</div>
+
+                <h3>R25</h3>
+
+                <p>
+                    Sport bike dua silinder dengan desain
+                    R-Series yang sporty dan agresif.
+                </p>
+
+                <div class="bottom">
+
+                    <div class="price">
+                        Rp 63 Jutaan
+                    </div>
+
+                    <button class="detail"
+                        onclick="showDetail(
+                        'R25',
+                        'SUPER SPORT',
+                        '249 cc',
+                        'Manual 6-Speed',
+                        '26.4 kW',
+                        'Rp 63 Jutaan',
+                        'Motor sport Yamaha dengan konfigurasi dua silinder dan karakter berkendara sporty.'
+                        )">
+                        DETAIL
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MT15 -->
+
+        <div class="motor-card" data-category="naked">
+
+            <div class="motor-image">
+
+                <div class="showroom-brand">YAMAHA</div>
+                <div class="motor-label">HYPER NAKED</div>
+                <div class="model-bg">MT-15</div>
+
+                <img
+                    class="motor-photo"
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_MT-15.jpg"
+                    alt="Yamaha MT-15"
+                    onerror="imageFallback(this,'MT-15')"
+                >
+
+            </div>
+
+            <div class="motor-info">
+
+                <div class="category">HYPER NAKED</div>
+
+                <h3>MT-15</h3>
+
+                <p>
+                    Naked bike dengan tampilan agresif,
+                    ringan dan lincah untuk harian.
+                </p>
+
+                <div class="bottom">
+
+                    <div class="price">
+                        Rp 38,8 Juta
+                    </div>
+
+                    <button class="detail"
+                        onclick="showDetail(
+                        'MT-15',
+                        'HYPER NAKED',
+                        '155 cc',
+                        'Manual 6-Speed',
+                        '14.2 kW',
+                        'Rp 38,8 Juta',
+                        'Hyper Naked dengan desain agresif dan posisi berkendara yang sporty.'
+                        )">
+                        DETAIL
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- XSR155 -->
+
+        <div class="motor-card" data-category="naked">
+
+            <div class="motor-image">
+
+                <div class="showroom-brand">YAMAHA</div>
+                <div class="motor-label">SPORT HERITAGE</div>
+                <div class="model-bg">XSR</div>
+
+                <img
+                    class="motor-photo"
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_XSR155.jpg"
+                    alt="Yamaha XSR155"
+                    onerror="imageFallback(this,'XSR155')"
+                >
+
+            </div>
+
+            <div class="motor-info">
+
+                <div class="category">SPORT HERITAGE</div>
+
+                <h3>XSR155</h3>
+
+                <p>
+                    Perpaduan gaya klasik dengan teknologi
+                    modern untuk karakter yang unik.
+                </p>
+
+                <div class="bottom">
+
+                    <div class="price">
+                        Rp 37 Jutaan
+                    </div>
+
+                    <button class="detail"
+                        onclick="showDetail(
+                        'XSR155',
+                        'SPORT HERITAGE',
+                        '155 cc',
+                        'Manual 6-Speed',
+                        '14.2 kW',
+                        'Rp 37 Jutaan',
+                        'Motor bergaya heritage yang menggabungkan desain klasik dan teknologi modern.'
+                        )">
+                        DETAIL
+                    </button>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 
+</section>
 
-    <div
-        class="modal-price"
-        id="modalPrice">
-        Rp 33,7 Juta
+
+<!-- ================= PROMO ================= -->
+
+<section class="promo-section" id="promo">
+
+    <div class="promo-box">
+
+        <div class="promo-text">
+
+            <span>YAMAHA SPECIAL OFFER</span>
+
+            <h2>Promo & Program Yamaha</h2>
+
+            <p>
+                Temukan informasi program, pembiayaan,
+                dan penawaran yang tersedia. Promo dapat
+                berbeda berdasarkan model, periode,
+                wilayah, dan dealer.
+            </p>
+
+            <a
+                href="https://www.yamaha-motor.co.id/news"
+                target="_blank"
+                class="hero-button">
+                CEK INFO RESMI
+            </a>
+
+        </div>
+
+
+        <div class="promo-list">
+
+            <div class="promo-item"
+                onclick="showPromo(
+                'Program Khusus Yamaha',
+                'Berbagai program penawaran dapat tersedia untuk model Yamaha tertentu. Ketersediaan program dapat berbeda berdasarkan periode dan wilayah dealer.'
+                )">
+
+                <strong>🎁 Program Khusus</strong>
+
+                <small>
+                    Penawaran tertentu dapat tersedia
+                    untuk model dan periode tertentu.
+                </small>
+
+            </div>
+
+
+            <div class="promo-item"
+                onclick="showPromo(
+                'Pilihan Pembiayaan',
+                'Pilihan pembiayaan dapat tersedia melalui jaringan dealer dan perusahaan pembiayaan yang bekerja sama. Detail cicilan dan uang muka perlu dikonfirmasi kepada dealer.'
+                )">
+
+                <strong>💳 Pilihan Pembiayaan</strong>
+
+                <small>
+                    Tersedia pilihan pembiayaan melalui
+                    jaringan dealer.
+                </small>
+
+            </div>
+
+
+            <div class="promo-item"
+                onclick="showPromo(
+                'Special Offer',
+                'Penawaran khusus dapat berubah sesuai periode, model motor, lokasi, dan kebijakan dealer. Silakan cek informasi terbaru sebelum melakukan pembelian.'
+                )">
+
+                <strong>⚡ Special Offer</strong>
+
+                <small>
+                    Cek informasi terbaru sebelum
+                    melakukan pembelian.
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MODAL ================= -->
+
+<div class="modal" id="detailModal">
+
+    <div class="modal-content">
+
+        <div class="modal-top">
+
+            <div>
+
+                <h2 id="modalName">
+                    NMAX
+                </h2>
+
+                <div
+                    class="modal-category"
+                    id="modalCategory">
+                    MAXI YAMAHA
+                </div>
+
+            </div>
+
+            <button
+                class="close"
+                onclick="closeModal()">
+                ×
+            </button>
+
+        </div>
+
+
+        <p
+            class="modal-description"
+            id="modalDescription">
+            Detail motor Yamaha.
+        </p>
+
+
+        <div class="specs">
+
+            <div class="spec">
+                <span>Mesin</span>
+                <span id="modalEngine">155 cc</span>
+            </div>
+
+            <div class="spec">
+                <span>Transmisi</span>
+                <span id="modalTransmission">Automatic</span>
+            </div>
+
+            <div class="spec">
+                <span>Tenaga</span>
+                <span id="modalPower">11.3 kW</span>
+            </div>
+
+        </div>
+
+
+        <div
+            class="modal-price"
+            id="modalPrice">
+            Rp 33,7 Juta
+        </div>
+
     </div>
 
 </div>
 
-</div><footer id="about">© 2026 YAMAHA — Premium Motorcycle Line Up
 
-</footer><script>
+<!-- ================= FOOTER ================= -->
+
+<footer id="about">
+
+    © 2026 YAMAHA — Premium Motorcycle Line Up
+
+</footer>
+
+
+<script>
+
+/* ================= DETAIL MOTOR ================= */
 
 function showDetail(
     name,
@@ -1004,7 +1411,8 @@ function showDetail(
     engine,
     transmission,
     power,
-    price
+    price,
+    description
 ){
 
     document.getElementById("modalName").innerText = name;
@@ -1019,43 +1427,138 @@ function showDetail(
 
     document.getElementById("modalPrice").innerText = price;
 
-    document.getElementById("detailModal").style.display = "flex";
+    document.getElementById("modalDescription").innerText = description;
 
-    document.body.style.overflow = "hidden";
+    document.getElementById("detailModal").classList.add("show");
+
+    document.body.classList.add("lock");
 }
 
 
-function closeDetail(){
+/* ================= PROMO ================= */
 
-    document.getElementById("detailModal").style.display = "none";
+function showPromo(title, description){
 
-    document.body.style.overflow = "auto";
+    document.getElementById("modalName").innerText = title;
+
+    document.getElementById("modalCategory").innerText =
+        "YAMAHA SPECIAL OFFER";
+
+    document.getElementById("modalDescription").innerText =
+        description;
+
+    document.getElementById("modalEngine").innerText =
+        "Cek dealer";
+
+    document.getElementById("modalTransmission").innerText =
+        "Tergantung program";
+
+    document.getElementById("modalPower").innerText =
+        "Periode tertentu";
+
+    document.getElementById("modalPrice").innerText =
+        "Lihat informasi resmi Yamaha";
+
+    document.getElementById("detailModal").classList.add("show");
+
+    document.body.classList.add("lock");
 }
 
 
-window.onclick = function(event){
+/* ================= CLOSE ================= */
 
-    const modal =
-        document.getElementById("detailModal");
+function closeModal(){
 
-    if(event.target === modal){
+    document.getElementById("detailModal").classList.remove("show");
 
-        closeDetail();
+    document.body.classList.remove("lock");
+}
+
+
+/* KLIK DI LUAR MODAL */
+
+document.getElementById("detailModal").addEventListener(
+    "click",
+    function(event){
+
+        if(event.target === this){
+
+            closeModal();
+
+        }
 
     }
+);
+
+
+/* TOMBOL ESC */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* ================= FILTER MOTOR ================= */
+
+function filterMotor(category, button){
+
+    const cards =
+        document.querySelectorAll(".motor-card");
+
+    const buttons =
+        document.querySelectorAll(".filter");
+
+    buttons.forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
+
+    button.classList.add("active");
+
+
+    cards.forEach(function(card){
+
+        if(
+            category === "all" ||
+            card.dataset.category === category
+        ){
+
+            card.style.display = "";
+
+        }else{
+
+            card.style.display = "none";
+
+        }
+
+    });
 
 }
 
 
-document.addEventListener("keydown", function(event){
+/* ================= IMAGE FALLBACK ================= */
 
-    if(event.key === "Escape"){
+function imageFallback(image, name){
 
-        closeDetail();
+    image.onerror = null;
 
-    }
+    image.src =
+        "https://placehold.co/1000x600/061224/159cff?text=YAMAHA+" +
+        encodeURIComponent(name);
 
-});
+}
 
-</script></body>
+</script>
+
+</body>
 </html>
