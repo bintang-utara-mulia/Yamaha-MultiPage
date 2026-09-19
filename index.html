@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yamaha Motor — Ride Your Way</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(
+                90deg,
+                rgba(0,0,0,0.78),
+                rgba(0,0,0,0.35),
+                rgba(0,0,0,0.05)
+            );
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
+        <nav class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex items-center justify-between">
+
+            <a href="index.html" class="text-2xl font-black tracking-tight">
+                YAMAHA
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a href="index.html" class="hover:text-red-600 transition">Home</a>
+                <a href="katalog.html" class="hover:text-red-600 transition">Katalog</a>
+                <a href="promo.html" class="hover:text-red-600 transition">Promo</a>
+                <a href="tentang.html" class="hover:text-red-600 transition">Tentang</a>
+                <a href="kontak.html" class="hover:text-red-600 transition">Kontak</a>
+            </div>
+
+            <a href="katalog.html"
+               class="hidden sm:inline-block bg-black text-white px-5 py-3 rounded-full text-sm font-bold hover:bg-red-600 transition">
+                Lihat Motor
+            </a>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="relative min-h-screen flex items-center overflow-hidden bg-gray-950">
+
+            <img
+                src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1800&q=85"
+                alt="Motor Yamaha"
+                class="absolute inset-0 w-full h-full object-cover opacity-75"
+            >
+
+            <div class="absolute inset-0 hero-overlay"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 w-full pt-20">
+
+                <div class="max-w-2xl text-white">
+
+                    <p class="text-sm md:text-base font-bold tracking-[0.3em] uppercase mb-5 text-gray-300">
+                        Yamaha Motor Showcase
+                    </p>
+
+                    <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight">
+                        Ride Your Way.
+                    </h1>
+
+                    <p class="mt-6 text-lg md:text-xl text-gray-200 leading-relaxed max-w-xl">
+                        Temukan motor Yamaha dengan perpaduan desain sporty,
+                        teknologi modern, dan kenyamanan untuk perjalananmu.
+                    </p>
+
+                    <div class="mt-9 flex flex-wrap gap-4">
+
+                        <a href="katalog.html"
+                           class="bg-white text-black px-7 py-4 rounded-full font-bold hover:bg-red-600 hover:text-white transition">
+                            Jelajahi Katalog
+                        </a>
+
+                        <a href="promo.html"
+                           class="border border-white/60 text-white px-7 py-4 rounded-full font-bold hover:bg-white hover:text-black transition">
+                            Lihat Promo
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- INTRO -->
+        <section class="py-24 bg-white">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="max-w-3xl">
+
+                    <p class="text-sm font-bold tracking-[0.25em] uppercase text-gray-500">
+                        Yamaha Collection
+                    </p>
+
+                    <h2 class="mt-4 text-4xl md:text-5xl font-black tracking-tight">
+                        Sporty dalam desain.
+                        <br>
+                        Nyaman dalam perjalanan.
+                    </h2>
+
+                    <p class="mt-6 text-gray-600 text-lg leading-relaxed">
+                        Pilih motor Yamaha yang sesuai dengan kebutuhan,
+                        gaya berkendara, dan aktivitas sehari-hari.
+                    </p>
+
+                </div>
+
+
+                <!-- PRODUCT CARDS -->
+                <div class="grid md:grid-cols-3 gap-7 mt-14">
+
+                    <!-- NMAX -->
+                    <article class="card-hover border border-gray-200 rounded-3xl overflow-hidden bg-white">
+
+                        <div class="h-64 bg-gray-100 overflow-hidden">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1558981285-6f0c94958bb6?auto=format&fit=crop&w=1000&q=85"
+                                alt="Yamaha NMAX"
+                                class="w-full h-full object-cover"
+                            >
+
+                        </div>
+
+                        <div class="p-7">
+
+                            <p class="text-xs font-bold uppercase tracking-widest text-gray-500">
+                                Maxi Scooter
+                            </p>
+
+                            <h3 class="text-2xl font-black mt-2">
+                                Yamaha NMAX
+                            </h3>
+
+                            <p class="text-gray-600 mt-3 leading-relaxed">
+                                Skutik premium dengan desain modern dan
+                                kenyamanan untuk perjalanan harian.
+                            </p>
+
+                            <div class="mt-6 flex items-center justify-between">
+
+                                <span class="font-bold">
+                                    Mulai dari Rp 32 Jutaan
+                                </span>
+
+                                <a href="detail-nmax.html"
+                                   class="font-bold text-red-600 hover:text-black transition">
+                                    Detail →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AEROX -->
+                    <article class="card-hover border border-gray-200 rounded-3xl overflow-hidden bg-white">
+
+                        <div class="h-64 bg-gray-100 overflow-hidden">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=1000&q=85"
+                                alt="Yamaha Aerox"
+                                class="w-full h-full object-cover"
+                            >
+
+                        </div>
+
+                        <div class="p-7">
+
+                            <p class="text-xs font-bold uppercase tracking-widest text-gray-500">
+                                Sport Scooter
+                            </p>
+
+                            <h3 class="text-2xl font-black mt-2">
+                                Yamaha Aerox
+                            </h3>
+
+                            <p class="text-gray-600 mt-3 leading-relaxed">
+                                Karakter sporty dengan tampilan agresif
+                                untuk pengguna yang aktif.
+                            </p>
+
+                            <div class="mt-6 flex items-center justify-between">
+
+                                <span class="font-bold">
+                                    Mulai dari Rp 29 Jutaan
+                                </span>
+
+                                <a href="detail-aerox.html"
+                                   class="font-bold text-red-600 hover:text-black transition">
+                                    Detail →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- FAZZIO -->
+                    <article class="card-hover border border-gray-200 rounded-3xl overflow-hidden bg-white">
+
+                        <div class="h-64 bg-gray-100 overflow-hidden">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1558980394-0c4c4c3a8d9e?auto=format&fit=crop&w=1000&q=85"
+                                alt="Yamaha Fazzio"
+                                class="w-full h-full object-cover"
+                            >
+
+                        </div>
+
+                        <div class="p-7">
+
+                            <p class="text-xs font-bold uppercase tracking-widest text-gray-500">
+                                Hybrid Scooter
+                            </p>
+
+                            <h3 class="text-2xl font-black mt-2">
+                                Yamaha Fazzio
+                            </h3>
+
+                            <p class="text-gray-600 mt-3 leading-relaxed">
+                                Gaya modern dan praktis untuk menemani
+                                aktivitas sehari-hari.
+                            </p>
+
+                            <div class="mt-6 flex items-center justify-between">
+
+                                <span class="font-bold">
+                                    Mulai dari Rp 22 Jutaan
+                                </span>
+
+                                <a href="detail-fazzio.html"
+                                   class="font-bold text-red-600 hover:text-black transition">
+                                    Detail →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHY YAMAHA -->
+        <section class="py-24 bg-gray-950 text-white">
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+                    <div>
+
+                        <p class="text-sm font-bold tracking-[0.25em] uppercase text-gray-400">
+                            Why Yamaha
+                        </p>
+
+                        <h2 class="text-4xl md:text-5xl font-black mt-4">
+                            Dibuat untuk bergerak lebih jauh.
+                        </h2>
+
+                        <p class="mt-6 text-gray-400 text-lg leading-relaxed">
+                            Yamaha menghadirkan pilihan motor dengan
+                            karakter yang berbeda untuk berbagai kebutuhan
+                            dan gaya berkendara.
+                        </p>
+
+                    </div>
+
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+
+                        <div class="border border-white/10 rounded-2xl p-6">
+                            <div class="text-2xl font-black">01</div>
+                            <h3 class="font-bold mt-4">Sporty Design</h3>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Tampilan modern dan berkarakter.
+                            </p>
+                        </div>
+
+                        <div class="border border-white/10 rounded-2xl p-6">
+                            <div class="text-2xl font-black">02</div>
+                            <h3 class="font-bold mt-4">Modern Technology</h3>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Teknologi untuk pengalaman berkendara.
+                            </p>
+                        </div>
+
+                        <div class="border border-white/10 rounded-2xl p-6">
+                            <div class="text-2xl font-black">03</div>
+                            <h3 class="font-bold mt-4">Daily Comfort</h3>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Nyaman digunakan untuk aktivitas harian.
+                            </p>
+                        </div>
+
+                        <div class="border border-white/10 rounded-2xl p-6">
+                            <div class="text-2xl font-black">04</div>
+                            <h3 class="font-bold mt-4">Your Lifestyle</h3>
+                            <p class="text-gray-400 text-sm mt-2">
+                                Pilihan yang dapat disesuaikan denganmu.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="py-24">
+
+            <div class="max-w-5xl mx-auto px-5 text-center">
+
+                <p class="text-sm font-bold tracking-[0.25em] uppercase text-gray-500">
+                    Find Your Ride
+                </p>
+
+                <h2 class="text-4xl md:text-6xl font-black mt-4">
+                    Siap menemukan Yamaha pilihanmu?
+                </h2>
+
+                <p class="mt-6 text-gray-600 text-lg">
+                    Jelajahi katalog dan temukan motor yang sesuai
+                    dengan kebutuhanmu.
+                </p>
+
+                <a href="katalog.html"
+                   class="inline-block mt-8 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-red-600 transition">
+                    Lihat Semua Motor
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-12">
+
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+            <div class="flex flex-col md:flex-row justify-between gap-8">
+
+                <div>
+                    <h2 class="text-2xl font-black">YAMAHA</h2>
+                    <p class="text-gray-400 mt-3 max-w-sm">
+                        Yamaha Motor Showcase — project website
+                        multi-page dengan data contoh.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-6 text-sm text-gray-400">
+                    <a href="index.html" class="hover:text-white">Home</a>
+                    <a href="katalog.html" class="hover:text-white">Katalog</a>
+     
+                <a href="promo.html" class="hover:text-white">Promo</a>
+                    <a href="tentang.html" class="hover:text-white">Tentang</a>
+                    <a href="kontak.html" class="hover:text-white">Kontak</a>
+                </div>
+
+            </div>
+
+            <div class="border-t border-white/10 mt-10 pt-6 text-sm text-gray-500">
+                © 2026 Yamaha Motor Showcase. Project website.
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+                          </html>
