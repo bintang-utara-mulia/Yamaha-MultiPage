@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>YAMAHA INDONESIA — Premium Line Up</title>
+<title>YAMAHA — Premium Motor Line Up</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
@@ -15,759 +15,251 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
-    font-family:'DM Sans',sans-serif;
-    background:#05080d;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(0,91,255,.20), transparent 30%),
+        radial-gradient(circle at 85% 40%, rgba(0,145,255,.13), transparent 30%),
+        linear-gradient(145deg,#02050b,#06101d 45%,#02050a);
     color:#fff;
+    font-family:'DM Sans',sans-serif;
+    min-height:100vh;
 }
 
-/* ================= NAVBAR ================= */
-
-nav{
+body:before{
+    content:"";
     position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        linear-gradient(rgba(20,120,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(20,120,255,.025) 1px,transparent 1px);
+    background-size:40px 40px;
+}
+
+header{
+    position:sticky;
     top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    height:76px;
+    z-index:10;
+    height:110px;
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    padding:0 6%;
-    background:rgba(3,7,13,.88);
+    padding:0 38px;
+    background:rgba(2,5,11,.94);
     backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(80,160,255,.15);
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-size:23px;
-    font-weight:800;
-    letter-spacing:2px;
-}
-
-.logo-mark{
-    width:39px;
-    height:39px;
-    border:2px solid #fff;
+    width:74px;
+    height:74px;
+    border:3px solid #fff;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:16px;
-}
-
-.nav-links{
-    display:flex;
-    gap:30px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:#ddd;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:#39aaff;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    min-height:720px;
-    padding:150px 7% 80px;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    background:
-        linear-gradient(90deg,rgba(3,7,13,.98),rgba(3,7,13,.68),rgba(3,7,13,.15)),
-        url("https://files.yappe.in/place/full/yamaha-motor-showroom-parnami-motors-3778795.webp");
-    background-size:cover;
-    background-position:center;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-        radial-gradient(circle at 75% 40%,rgba(0,128,255,.28),transparent 35%),
-        linear-gradient(0deg,#05080d,transparent 35%);
-    pointer-events:none;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:750px;
-}
-
-.small-title{
-    color:#43a9ff;
-    letter-spacing:5px;
-    font-size:13px;
-    font-weight:800;
-    margin-bottom:18px;
-}
-
-.hero h1{
-    font-family:'Playfair Display',serif;
-    font-size:clamp(55px,8vw,105px);
-    line-height:.92;
-    margin-bottom:25px;
-}
-
-.hero h1 span{
-    color:#42aaff;
-}
-
-.hero p{
-    max-width:600px;
-    color:#c5cbd3;
-    font-size:17px;
-    line-height:1.8;
-}
-
-.hero-button{
-    display:inline-block;
-    margin-top:35px;
-    padding:15px 25px;
-    border:1px solid rgba(255,255,255,.3);
-    color:#fff;
-    text-decoration:none;
-    border-radius:5px;
+    font-size:34px;
     font-weight:700;
-    transition:.3s;
 }
 
-.hero-button:hover{
-    background:#168cff;
-    border-color:#168cff;
-}
-
-/* ================= INTRO ================= */
-
-.intro{
-    padding:100px 7% 55px;
-    text-align:center;
-}
-
-.intro small{
-    color:#3ba7ff;
-    font-weight:800;
-    letter-spacing:4px;
-}
-
-.intro h2{
-    margin-top:12px;
-    font-family:'Playfair Display',serif;
-    font-size:48px;
-}
-
-.intro p{
-    max-width:700px;
-    margin:20px auto 0;
-    color:#929aa5;
-    line-height:1.8;
-}
-
-/* ================= FILTER ================= */
-
-.filters{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-    padding:20px 7% 45px;
-}
-
-.filter-btn{
-    border:1px solid #29313b;
-    background:#0b1017;
-    color:#aeb7c1;
-    padding:11px 20px;
-    border-radius:30px;
-    cursor:pointer;
-    font-family:inherit;
-    font-weight:600;
-    transition:.3s;
-}
-
-.filter-btn:hover,
-.filter-btn.active{
-    color:#fff;
-    background:#087ee7;
-    border-color:#087ee7;
-}
-
-/* ================= CATALOG ================= */
-
-.catalog{
-    padding:0 5% 100px;
-}
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-/* ================= MOTOR CARD ================= */
-
-.card{
-    background:#0a0f16;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:16px;
-    overflow:hidden;
-    transition:.45s;
-    box-shadow:0 15px 50px rgba(0,0,0,.25);
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(40,158,255,.55);
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.5),
-        0 0 35px rgba(0,128,255,.12);
-}
-
-/* =========================================================
-   BACKGROUND SHOWROOM YAMAHA
-   ========================================================= */
-
-.card-image{
-    height:370px;
-    position:relative;
-    overflow:hidden;
-    isolation:isolate;
-
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(2,7,13,.78) 0%,
-            rgba(2,12,24,.28) 45%,
-            rgba(2,7,13,.78) 100%
-        ),
-        url("https://files.yappe.in/place/full/yamaha-motor-showroom-parnami-motors-3778795.webp");
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    border-bottom:1px solid rgba(37,150,255,.35);
-}
-
-/* Lapisan biru seperti lampu showroom */
-.card-image::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:1;
-    pointer-events:none;
-
-    background:
-        linear-gradient(
-            115deg,
-            transparent 15%,
-            rgba(0,151,255,.16) 35%,
-            transparent 55%
-        ),
-        radial-gradient(
-            ellipse at 50% 100%,
-            rgba(0,126,255,.35),
-            transparent 60%
-        );
-}
-
-/* Efek lantai glossy */
-.card-image::after{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:35%;
-    z-index:2;
-    pointer-events:none;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            rgba(0,0,0,.7)
-        ),
-        repeating-linear-gradient(
-            90deg,
-            rgba(255,255,255,.025) 0px,
-            rgba(255,255,255,.025) 1px,
-            transparent 1px,
-            transparent 90px
-        );
-}
-
-/* Sembunyikan background lama */
-.city,
-.wall,
-.floor,
-.floor-line{
-    display:none !important;
-}
-
-/* ================= LOGO BACKGROUND ================= */
-
-.showroom-logo{
-    position:absolute;
-    top:25px;
-    right:24px;
-    z-index:3;
-
-    color:rgba(255,255,255,.85);
-    font-size:25px;
-    font-weight:800;
-    letter-spacing:5px;
-
-    text-shadow:
-        0 0 10px rgba(255,255,255,.25),
-        0 0 25px rgba(0,130,255,.4);
-}
-
-.showroom-text{
-    position:absolute;
-    top:61px;
-    right:25px;
-    z-index:3;
-
-    text-align:right;
-    color:rgba(255,255,255,.62);
-    font-size:8px;
-    letter-spacing:2px;
-    line-height:1.8;
-}
-
-.showroom-text span{
-    color:#3faeff;
-    display:block;
-    font-weight:800;
-}
-
-/* ================= MOTOR ================= */
-
-.card-image img{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-47%);
-
-    width:94%;
-    height:86%;
-
-    object-fit:contain;
-
-    z-index:5;
-
-    filter:
-        drop-shadow(0 25px 18px rgba(0,0,0,.7))
-        drop-shadow(0 0 18px rgba(0,128,255,.16));
-
-    transition:.5s ease;
-
-    /*
-       Membantu gambar motor dengan background putih
-       menyatu dengan showroom.
-    */
-    mix-blend-mode:multiply;
-}
-
-.card:hover .card-image img{
-    transform:translate(-50%,-50%) scale(1.055);
-
-    filter:
-        drop-shadow(0 30px 20px rgba(0,0,0,.8))
-        drop-shadow(0 0 25px rgba(0,145,255,.25));
-}
-
-/* Badge */
-
-.badge{
-    position:absolute;
-    left:18px;
-    top:18px;
-    z-index:8;
-
-    background:rgba(0,0,0,.7);
-    border:1px solid rgba(255,255,255,.16);
-
-    padding:7px 11px;
-    border-radius:5px;
-
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1.5px;
-    color:#fff;
-
-    backdrop-filter:blur(8px);
-}
-
-/* ================= CARD CONTENT ================= */
-
-.card-content{
-    padding:23px 23px 25px;
-}
-
-.card-category{
-    color:#329fff;
-    font-size:10px;
-    letter-spacing:2px;
-    font-weight:800;
-    margin-bottom:8px;
-}
-
-.card h3{
-    font-family:'Playfair Display',serif;
-    font-size:29px;
-    margin-bottom:8px;
-}
-
-.card-description{
-    color:#929ba6;
-    font-size:13px;
-    line-height:1.7;
-    min-height:44px;
-}
-
-.card-bottom{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-top:20px;
-    padding-top:17px;
-    border-top:1px solid rgba(255,255,255,.07);
-}
-
-.price{
-    font-size:13px;
-    color:#aaa;
-}
-
-.price strong{
-    display:block;
-    color:#fff;
-    font-size:15px;
-    margin-top:3px;
-}
-
-.detail-btn{
-    border:1px solid #31536f;
-    background:transparent;
-    color:#fff;
-    padding:9px 14px;
-    border-radius:5px;
-    cursor:pointer;
-    font-family:inherit;
-    font-size:11px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.detail-btn:hover{
-    background:#087ee7;
-    border-color:#087ee7;
-}
-
-/* ================= FEATURE ================= */
-
-.feature{
-    margin:0 5% 100px;
-    min-height:420px;
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    border-radius:18px;
-    overflow:hidden;
-
-    background:#0b1119;
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.feature-image{
-    min-height:420px;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(4,8,13,.15),
-            rgba(4,8,13,.55)
-        ),
-        url("https://files.yappe.in/place/full/yamaha-motor-showroom-parnami-motors-3778795.webp");
-    background-size:cover;
-    background-position:center;
-}
-
-.feature-content{
-    padding:60px;
-    display:flex;
-    justify-content:center;
-    flex-direction:column;
-}
-
-.feature-content small{
-    color:#329fff;
+.brand{
+    margin-left:22px;
+    font-size:42px;
     font-weight:800;
     letter-spacing:3px;
 }
 
-.feature-content h2{
+.hero{
+    padding:75px 38px 30px;
+    text-align:center;
+}
+
+.hero small{
+    color:#4da3ff;
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:5px;
+}
+
+.hero h1{
+    margin-top:15px;
     font-family:'Playfair Display',serif;
-    font-size:45px;
-    margin:15px 0;
+    font-size:clamp(42px,8vw,82px);
+    line-height:1;
 }
 
-.feature-content p{
-    color:#929ba6;
-    line-height:1.8;
-    font-size:14px;
+.hero p{
+    max-width:650px;
+    margin:22px auto 0;
+    color:#8e9aaa;
+    font-size:17px;
+    line-height:1.7;
 }
 
-/* ================= MODAL ================= */
-
-.modal{
-    position:fixed;
-    inset:0;
-    z-index:2000;
-
-    display:none;
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(0,0,0,.8);
-    backdrop-filter:blur(10px);
-
-    padding:20px;
+.line{
+    width:90px;
+    height:3px;
+    background:#168cff;
+    margin:30px auto;
+    box-shadow:0 0 20px #168cff;
 }
 
-.modal.show{
-    display:flex;
+.grid{
+    width:min(1200px,92%);
+    margin:35px auto 80px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:28px;
 }
 
-.modal-box{
-    width:min(850px,100%);
-    max-height:90vh;
-    overflow:auto;
-
-    background:#0c121a;
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:15px;
-    box-shadow:0 30px 100px rgba(0,0,0,.6);
-}
-
-.modal-image{
-    height:350px;
+.card{
     position:relative;
     overflow:hidden;
-
-    background-image:
-        linear-gradient(
-            rgba(2,8,15,.45),
-            rgba(2,8,15,.65)
-        ),
-        url("https://files.yappe.in/place/full/yamaha-motor-showroom-parnami-motors-3778795.webp");
-
-    background-size:cover;
-    background-position:center;
+    border:1px solid rgba(45,140,255,.65);
+    border-radius:26px;
+    background:linear-gradient(145deg,#08121e,#05090f);
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+    transition:.35s ease;
 }
 
-.modal-image img{
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#2b9aff;
+    box-shadow:0 25px 70px rgba(0,100,255,.25);
+}
+
+.motor-image{
+    height:330px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    background:
+        radial-gradient(circle at center,rgba(0,110,255,.25),transparent 55%),
+        linear-gradient(135deg,#071b32,#02060c);
+    overflow:hidden;
+}
+
+/* cahaya biru di belakang motor */
+.motor-image:before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:rgba(0,110,255,.18);
+    filter:blur(45px);
+}
+
+.motor-image img{
+    position:relative;
+    z-index:2;
     width:100%;
     height:100%;
     object-fit:contain;
-
-    filter:drop-shadow(0 25px 20px rgba(0,0,0,.8));
-    mix-blend-mode:multiply;
+    mix-blend-mode:normal;
+    filter:drop-shadow(0 20px 25px rgba(0,0,0,.75));
+    transition:.4s ease;
 }
 
-.close{
-    position:absolute;
-    top:15px;
-    right:18px;
-    z-index:10;
+.card:hover .motor-image img{
+    transform:scale(1.06);
+}
 
-    width:38px;
-    height:38px;
+.info{
+    padding:27px 28px 30px;
+}
 
-    border-radius:50%;
-    border:1px solid rgba(255,255,255,.2);
-    background:rgba(0,0,0,.55);
+.category{
+    color:#39a0ff;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:4px;
+}
 
+.name{
+    margin-top:9px;
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+}
+
+.desc{
+    color:#929cab;
+    margin-top:12px;
+    line-height:1.6;
+    min-height:52px;
+}
+
+.bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:25px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.price span{
+    display:block;
+    color:#7e8997;
+    font-size:12px;
+    margin-bottom:4px;
+}
+
+.price strong{
+    font-size:18px;
+}
+
+.btn{
+    border:1px solid #277fc1;
+    background:rgba(14,39,65,.55);
     color:#fff;
-    font-size:22px;
+    padding:13px 19px;
+    border-radius:10px;
+    font-weight:700;
     cursor:pointer;
 }
 
-.modal-content{
-    padding:30px;
+.btn:hover{
+    background:#0b65ae;
 }
-
-.modal-content h2{
-    font-family:'Playfair Display',serif;
-    font-size:38px;
-    margin-bottom:10px;
-}
-
-.modal-content p{
-    color:#9da5af;
-    line-height:1.8;
-}
-
-.specs{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin-top:25px;
-}
-
-.spec{
-    background:#111923;
-    border:1px solid rgba(255,255,255,.06);
-    padding:15px;
-    border-radius:8px;
-}
-
-.spec span{
-    display:block;
-    color:#717b86;
-    font-size:10px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-
-.spec strong{
-    display:block;
-    margin-top:5px;
-    font-size:14px;
-}
-
-/* ================= FOOTER ================= */
 
 footer{
-    padding:55px 7%;
-    border-top:1px solid rgba(255,255,255,.08);
-    background:#03060a;
-
-    display:flex;
-    justify-content:space-between;
-    gap:30px;
-    flex-wrap:wrap;
+    text-align:center;
+    color:#687383;
+    padding:35px;
+    border-top:1px solid rgba(255,255,255,.07);
 }
 
-.footer-logo{
-    font-size:20px;
-    font-weight:800;
-    letter-spacing:2px;
-}
+@media(max-width:600px){
+    header{
+        height:90px;
+        padding:0 25px;
+    }
 
-footer p{
-    color:#6e7782;
-    font-size:12px;
-    margin-top:8px;
-}
+    .logo{
+        width:58px;
+        height:58px;
+        font-size:27px;
+    }
 
-.footer-right{
-    color:#6e7782;
-    font-size:12px;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:1050px){
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
+    .brand{
+        font-size:29px;
+        margin-left:15px;
     }
 
     .hero{
-        min-height:650px;
-    }
-}
-
-@media(max-width:750px){
-
-    nav{
-        padding:0 5%;
+        padding:55px 25px 20px;
     }
 
-    .nav-links{
-        display:none;
-    }
-
-    .hero{
-        min-height:650px;
-        padding:130px 7% 70px;
-    }
-
-    .hero h1{
-        font-size:58px;
-    }
-
-    .intro h2{
-        font-size:38px;
-    }
-
-    .products{
+    .grid{
+        width:92%;
         grid-template-columns:1fr;
     }
 
-    .card-image{
-        height:350px;
-    }
-
-    .feature{
-        grid-template-columns:1fr;
-    }
-
-    .feature-image{
-        min-height:280px;
-    }
-
-    .feature-content{
-        padding:35px;
-    }
-
-    .feature-content h2{
-        font-size:36px;
-    }
-
-    .specs{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:480px){
-
-    .hero h1{
-        font-size:48px;
-    }
-
-    .card-image{
-        height:320px;
-    }
-
-    .showroom-logo{
-        font-size:20px;
-    }
-
-    .specs{
-        grid-template-columns:1fr;
+    .motor-image{
+        height:300px;
     }
 }
 </style>
@@ -775,661 +267,160 @@ footer p{
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<header>
+    <div class="logo">Y</div>
+    <div class="brand">YAMAHA</div>
+</header>
 
-<nav>
-
-    <div class="logo">
-        <div class="logo-mark">Y</div>
-        YAMAHA
-    </div>
-
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#catalog">Motor</a></li>
-        <li><a href="#about">About</a></li>
-    </ul>
-
-</nav>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <div class="small-title">
-            REV YOUR HEART
-        </div>
-
-        <h1>
-            THE ART OF<br>
-            <span>RIDE.</span>
-        </h1>
-
-        <p>
-            Jelajahi jajaran motor Yamaha dengan desain,
-            teknologi, dan karakter berkendara yang dirancang
-            untuk memberikan pengalaman berbeda di setiap perjalanan.
-        </p>
-
-        <a href="#catalog" class="hero-button">
-            EXPLORE LINE UP
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= INTRO ================= -->
-
-<section class="intro" id="about">
-
-    <small>YAMAHA INDONESIA</small>
-
-    <h2>Premium Motorcycle Line Up</h2>
-
+<section class="hero">
+    <small>REV YOUR HEART</small>
+    <h1>Premium Motor Line Up</h1>
+    <div class="line"></div>
     <p>
-        Temukan berbagai pilihan motor Yamaha mulai dari scooter,
-        sport, naked bike, hingga adventure yang memiliki karakter
-        dan teknologi masing-masing.
+        Jelajahi berbagai pilihan motor Yamaha dengan desain,
+        performa, dan karakter yang berbeda untuk setiap perjalanan.
     </p>
-
 </section>
 
+<section class="grid">
 
-<!-- ================= FILTER ================= -->
-
-<div class="filters">
-
-    <button class="filter-btn active" data-filter="all">
-        Semua
-    </button>
-
-    <button class="filter-btn" data-filter="scooter">
-        Scooter
-    </button>
-
-    <button class="filter-btn" data-filter="sport">
-        Sport
-    </button>
-
-    <button class="filter-btn" data-filter="naked">
-        Naked
-    </button>
-
-    <button class="filter-btn" data-filter="adventure">
-        Adventure
-    </button>
-
-</div>
-
-
-<!-- ================= CATALOG ================= -->
-
-<section class="catalog" id="catalog">
-
-    <div class="products" id="products"></div>
-
-</section>
-
-
-<!-- ================= FEATURE ================= -->
-
-<section class="feature">
-
-    <div class="feature-image"></div>
-
-    <div class="feature-content">
-
-        <small>YAMAHA EXPERIENCE</small>
-
-        <h2>Born To Ride.</h2>
-
-        <p>
-            Yamaha menghadirkan kombinasi antara desain,
-            performa dan teknologi untuk menciptakan pengalaman
-            berkendara yang berbeda.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- ================= MODAL ================= -->
-
-<div class="modal" id="modal">
-
-    <div class="modal-box">
-
-        <div class="modal-image">
-
-            <button class="close" id="closeModal">
-                ×
-            </button>
-
-            <img id="modalImg" src="" alt="Motor Yamaha">
-
+    <!-- NMAX -->
+    <article class="card">
+        <div class="motor-image">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_NMAX_2026.jpg"
+                 alt="Yamaha NMAX">
         </div>
-
-        <div class="modal-content">
-
-            <h2 id="modalTitle"></h2>
-
-            <p id="modalDescription"></p>
-
-            <div class="specs">
-
-                <div class="spec">
-                    <span>Category</span>
-                    <strong id="modalCategory"></strong>
-                </div>
-
-                <div class="spec">
-                    <span>Engine</span>
-                    <strong id="modalEngine"></strong>
-                </div>
-
-                <div class="spec">
-                    <span>Type</span>
-                    <strong id="modalType"></strong>
-                </div>
-
+        <div class="info">
+            <div class="category">PREMIUM SCOOTER</div>
+            <div class="name">NMAX</div>
+            <div class="desc">
+                Maxi scooter dengan desain premium dan karakter berkendara nyaman.
             </div>
-
+            <div class="bottom">
+                <div class="price">
+                    <span>Mulai dari</span>
+                    <strong>Rp 34.000.000</strong>
+                </div>
+                <button class="btn">DETAIL</button>
+            </div>
         </div>
+    </article>
 
-    </div>
+    <!-- AEROX -->
+    <article class="card">
+        <div class="motor-image">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Aerox.jpg"
+                 alt="Yamaha Aerox">
+        </div>
+        <div class="info">
+            <div class="category">SPORT SCOOTER</div>
+            <div class="name">AEROX</div>
+            <div class="desc">
+                Scooter sporty dengan tampilan agresif dan karakter dinamis.
+            </div>
+            <div class="bottom">
+                <div class="price">
+                    <span>Mulai dari</span>
+                    <strong>Rp 28.000.000</strong>
+                </div>
+                <button class="btn">DETAIL</button>
+            </div>
+        </div>
+    </article>
 
-</div>
+    <!-- R15 -->
+    <article class="card">
+        <div class="motor-image">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R15_v4_bike.jpg"
+                 alt="Yamaha R15">
+        </div>
+        <div class="info">
+            <div class="category">SPORT BIKE</div>
+            <div class="name">R15</div>
+            <div class="desc">
+                Sport bike Yamaha dengan desain racing yang tajam dan modern.
+            </div>
+            <div class="bottom">
+                <div class="price">
+                    <span>Mulai dari</span>
+                    <strong>Rp 39.000.000</strong>
+                </div>
+                <button class="btn">DETAIL</button>
+            </div>
+        </div>
+    </article>
 
+    <!-- MT15 -->
+    <article class="card">
+        <div class="motor-image">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_MT15.jpg"
+                 alt="Yamaha MT-15">
+        </div>
+        <div class="info">
+            <div class="category">NAKED BIKE</div>
+            <div class="name">MT-15</div>
+            <div class="desc">
+                Naked bike dengan karakter agresif dan desain streetfighter.
+            </div>
+            <div class="bottom">
+                <div class="price">
+                    <span>Mulai dari</span>
+                    <strong>Rp 38.000.000</strong>
+                </div>
+                <button class="btn">DETAIL</button>
+            </div>
+        </div>
+    </article>
 
-<!-- ================= FOOTER ================= -->
+    <!-- R15 V3 -->
+    <article class="card">
+        <div class="motor-image">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_R15_V3.0.jpg"
+                 alt="Yamaha R15 V3">
+        </div>
+        <div class="info">
+            <div class="category">SPORT PERFORMANCE</div>
+            <div class="name">R15 V3</div>
+            <div class="desc">
+                Sport motorcycle dengan siluet racing dan tampilan aerodinamis.
+            </div>
+            <div class="bottom">
+                <div class="price">
+                    <span>Mulai dari</span>
+                    <strong>Rp 36.000.000</strong>
+                </div>
+                <button class="btn">DETAIL</button>
+            </div>
+        </div>
+    </article>
+
+    <!-- MT15 2 -->
+    <article class="card">
+        <div class="motor-image">
+            <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Yamaha_MT15_2.jpg"
+                 alt="Yamaha MT-15">
+        </div>
+        <div class="info">
+            <div class="category">STREET NAKED</div>
+            <div class="name">MT-15</div>
+            <div class="desc">
+                Gaya minimalis, agresif, dan cocok untuk karakter berkendara urban.
+            </div>
+            <div class="bottom">
+                <div class="price">
+                    <span>Mulai dari</span>
+                    <strong>Rp 38.000.000</strong>
+                </div>
+                <button class="btn">DETAIL</button>
+            </div>
+        </div>
+    </article>
+
+</section>
 
 <footer>
-
-    <div>
-
-        <div class="footer-logo">
-            YAMAHA INDONESIA
-        </div>
-
-        <p>
-            Premium Motorcycle Line Up
-        </p>
-
-    </div>
-
-    <div class="footer-right">
-        REV YOUR HEART © 2026
-    </div>
-
+    © 2026 YAMAHA — Premium Motor Line Up
 </footer>
-
-
-<script>
-
-/* =========================================================
-   DATA MOTOR YAMAHA
-   ========================================================= */
-
-const motorcycles = [
-
-    {
-        name:"NMAX 155",
-        category:"scooter",
-        categoryName:"MAXI SCOOTER",
-        type:"Scooter",
-        engine:"155 cc",
-        price:"Rp 33.000.000",
-        badge:"POPULAR",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_NMAX_155.jpg",
-        description:"Maxi scooter Yamaha dengan desain modern dan nyaman digunakan untuk aktivitas harian."
-    },
-
-    {
-        name:"NMAX TURBO",
-        category:"scooter",
-        categoryName:"MAXI SCOOTER",
-        type:"Scooter",
-        engine:"155 cc",
-        price:"Rp 38.000.000",
-        badge:"NEW",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_NMAX_Turbo.jpg",
-        description:"NMAX dengan teknologi dan karakter berkendara yang lebih sporty."
-    },
-
-    {
-        name:"XMAX 250",
-        category:"scooter",
-        categoryName:"MAXI SCOOTER",
-        type:"Scooter",
-        engine:"249 cc",
-        price:"Rp 66.000.000",
-        badge:"PREMIUM",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_XMAX_250.jpg",
-        description:"Maxi scooter premium dengan kapasitas mesin besar dan desain elegan."
-    },
-
-    {
-        name:"LEXi LX 155",
-        category:"scooter",
-        categoryName:"MAXI SCOOTER",
-        type:"Scooter",
-        engine:"155 cc",
-        price:"Rp 26.000.000",
-        badge:"NEW",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_Lexi_LX_155.jpg",
-        description:"Scooter ringan dengan desain modern dan posisi berkendara nyaman."
-    },
-
-    {
-        name:"AEROX 155",
-        category:"scooter",
-        categoryName:"SPORT SCOOTER",
-        type:"Scooter",
-        engine:"155 cc",
-        price:"Rp 28.000.000",
-        badge:"SPORT",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_Aerox_155.jpg",
-        description:"Sport scooter Yamaha dengan karakter agresif dan desain sporty."
-    },
-
-    {
-        name:"AEROX ALPHA",
-        category:"scooter",
-        categoryName:"SPORT SCOOTER",
-        type:"Scooter",
-        engine:"155 cc",
-        price:"Rp 30.000.000",
-        badge:"NEW",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_Aerox_Alpha.jpg",
-        description:"Generasi baru Aerox dengan tampilan agresif dan teknologi modern."
-    },
-
-    {
-        name:"FAZZIO",
-        category:"scooter",
-        categoryName:"HYBRID SCOOTER",
-        type:"Scooter",
-        engine:"125 cc",
-        price:"Rp 22.000.000",
-        badge:"STYLE",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/2022_Yamaha_Fazzio_Standard.png",
-        description:"Scooter bergaya modern-retro dengan desain unik dan fashionable."
-    },
-
-    {
-        name:"GRAND FILANO",
-        category:"scooter",
-        categoryName:"HYBRID SCOOTER",
-        type:"Scooter",
-        engine:"125 cc",
-        price:"Rp 27.000.000",
-        badge:"PREMIUM",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_Grand_Filano.jpg",
-        description:"Scooter premium bergaya elegan dengan teknologi hybrid."
-    },
-
-    {
-        name:"GEAR 125",
-        category:"scooter",
-        categoryName:"URBAN SCOOTER",
-        type:"Scooter",
-        engine:"125 cc",
-        price:"Rp 19.000.000",
-        badge:"URBAN",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_Gear_125.jpg",
-        description:"Scooter praktis untuk mobilitas sehari-hari."
-    },
-
-    {
-        name:"FREEGO 125",
-        category:"scooter",
-        categoryName:"URBAN SCOOTER",
-        type:"Scooter",
-        engine:"125 cc",
-        price:"Rp 21.000.000",
-        badge:"PRACTICAL",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_FreeGo.jpg",
-        description:"Scooter praktis dengan ruang penyimpanan luas dan desain modern."
-    },
-
-    {
-        name:"R15",
-        category:"sport",
-        categoryName:"SUPERSPORT",
-        type:"Sport",
-        engine:"155 cc",
-        price:"Rp 40.000.000",
-        badge:"SPORT",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_R15.jpg",
-        description:"Sport bike dengan DNA racing dan desain agresif."
-    },
-
-    {
-        name:"R25",
-        category:"sport",
-        categoryName:"SUPERSPORT",
-        type:"Sport",
-        engine:"249 cc",
-        price:"Rp 63.000.000",
-        badge:"SPORT",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_R25.jpg",
-        description:"Motor sport dua silinder dengan karakter performa tinggi."
-    },
-
-    {
-        name:"R3",
-        category:"sport",
-        categoryName:"SUPERSPORT",
-        type:"Sport",
-        engine:"321 cc",
-        price:"Rp 120.000.000",
-        badge:"PREMIUM",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_YZF-R3.jpg",
-        description:"Sport motorcycle dengan performa dan handling untuk pengalaman berkendara sporty."
-    },
-
-    {
-        name:"MX KING 150",
-        category:"sport",
-        categoryName:"UNDERBONE",
-        type:"Sport",
-        engine:"150 cc",
-        price:"Rp 27.000.000",
-        badge:"KING",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_MX_King.jpg",
-        description:"Motor bebek sport dengan karakter agresif dan performa responsif."
-    },
-
-    {
-        name:"MT-25",
-        category:"naked",
-        categoryName:"HYPER NAKED",
-        type:"Naked",
-        engine:"249 cc",
-        price:"Rp 58.000.000",
-        badge:"HYPER NAKED",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_MT-25.jpg",
-        description:"Naked bike dengan desain agresif dan mesin dua silinder."
-    },
-
-    {
-        name:"MT-15",
-        category:"naked",
-        categoryName:"HYPER NAKED",
-        type:"Naked",
-        engine:"155 cc",
-        price:"Rp 38.000.000",
-        badge:"HYPER NAKED",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_MT-15.jpg",
-        description:"Naked bike compact dengan karakter agresif khas MT Series."
-    },
-
-    {
-        name:"XSR 155",
-        category:"naked",
-        categoryName:"SPORT HERITAGE",
-        type:"Naked",
-        engine:"155 cc",
-        price:"Rp 38.000.000",
-        badge:"HERITAGE",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_XSR155.jpg",
-        description:"Perpaduan desain klasik dengan teknologi modern."
-    },
-
-    {
-        name:"VIXION 155",
-        category:"naked",
-        categoryName:"NAKED SPORT",
-        type:"Naked",
-        engine:"155 cc",
-        price:"Rp 29.000.000",
-        badge:"SPORT",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_Vixion.jpg",
-        description:"Naked sport Yamaha dengan desain dinamis."
-    },
-
-    {
-        name:"WR155R",
-        category:"adventure",
-        categoryName:"ADVENTURE",
-        type:"Adventure",
-        engine:"155 cc",
-        price:"Rp 39.000.000",
-        badge:"ADVENTURE",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_WR155R.jpg",
-        description:"Motor dual purpose untuk menjelajah berbagai kondisi jalan."
-    },
-
-    {
-        name:"TENERE 700",
-        category:"adventure",
-        categoryName:"ADVENTURE",
-        type:"Adventure",
-        engine:"689 cc",
-        price:"Rp 300.000.000",
-        badge:"ADVENTURE",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_Tenere_700.jpg",
-        description:"Adventure motorcycle untuk perjalanan jarak jauh dan medan beragam."
-    },
-
-    {
-        name:"PG-1",
-        category:"adventure",
-        categoryName:"LIFESTYLE",
-        type:"Adventure",
-        engine:"115 cc",
-        price:"Rp 20.000.000",
-        badge:"NEW",
-        image:"https://commons.wikimedia.org/wiki/Special:FilePath/Yamaha_PG-1.jpg",
-        description:"Motor bergaya adventure yang ringan dan cocok untuk berbagai aktivitas."
-    }
-
-];
-
-
-/* =========================================================
-   ELEMENT
-   ========================================================= */
-
-const products = document.getElementById("products");
-const filterButtons = document.querySelectorAll(".filter-btn");
-
-const modal = document.getElementById("modal");
-const closeModal = document.getElementById("closeModal");
-
-const modalImg = document.getElementById("modalImg");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalCategory = document.getElementById("modalCategory");
-const modalEngine = document.getElementById("modalEngine");
-const modalType = document.getElementById("modalType");
-
-
-/* =========================================================
-   RENDER PRODUCTS
-   ========================================================= */
-
-function renderProducts(filter="all"){
-
-    products.innerHTML = "";
-
-    const filtered =
-        filter === "all"
-        ? motorcycles
-        : motorcycles.filter(m => m.category === filter);
-
-    filtered.forEach((motor,index)=>{
-
-        const card = document.createElement("article");
-
-        card.className = "card";
-
-        card.innerHTML = `
-
-            <div class="card-image">
-
-                <div class="showroom-logo">
-                    YAMAHA
-                </div>
-
-                <div class="showroom-text">
-                    <span>REV YOUR HEART</span>
-                    PREMIUM SHOWROOM
-                </div>
-
-                <span class="badge">
-                    ${motor.badge}
-                </span>
-
-                <img
-                    src="${motor.image}"
-                    alt="${motor.name}"
-                    loading="lazy"
-                    onerror="this.style.display='none'"
-                >
-
-            </div>
-
-            <div class="card-content">
-
-                <div class="card-category">
-                    ${motor.categoryName}
-                </div>
-
-                <h3>
-                    ${motor.name}
-                </h3>
-
-                <p class="card-description">
-                    ${motor.description}
-                </p>
-
-                <div class="card-bottom">
-
-                    <div class="price">
-                        Mulai dari
-                        <strong>${motor.price}</strong>
-                    </div>
-
-                    <button
-                        class="detail-btn"
-                        onclick="showDetail(${motorcycles.indexOf(motor)})"
-                    >
-                        DETAIL
-                    </button>
-
-                </div>
-
-            </div>
-        `;
-
-        products.appendChild(card);
-
-    });
-
-}
-
-
-/* =========================================================
-   FILTER
-   ========================================================= */
-
-filterButtons.forEach(button=>{
-
-    button.addEventListener("click",()=>{
-
-        filterButtons.forEach(btn=>{
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-        renderProducts(button.dataset.filter);
-
-    });
-
-});
-
-
-/* =========================================================
-   MODAL DETAIL
-   ========================================================= */
-
-function showDetail(index){
-
-    const motor = motorcycles[index];
-
-    modalImg.src = motor.image;
-
-    modalTitle.textContent = motor.name;
-
-    modalDescription.textContent = motor.description;
-
-    modalCategory.textContent = motor.categoryName;
-
-    modalEngine.textContent = motor.engine;
-
-    modalType.textContent = motor.type;
-
-    modal.classList.add("show");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-/* =========================================================
-   CLOSE MODAL
-   ========================================================= */
-
-closeModal.addEventListener("click",()=>{
-
-    modal.classList.remove("show");
-
-    document.body.style.overflow = "";
-
-});
-
-
-modal.addEventListener("click",(e)=>{
-
-    if(e.target === modal){
-
-        modal.classList.remove("show");
-
-        document.body.style.overflow = "";
-
-    }
-
-});
-
-
-document.addEventListener("keydown",(e)=>{
-
-    if(e.key === "Escape"){
-
-        modal.classList.remove("show");
-
-        document.body.style.overflow = "";
-
-    }
-
-});
-
-
-/* =========================================================
-   START
-   ========================================================= */
-
-renderProducts();
-
-</script>
 
 </body>
 </html>
