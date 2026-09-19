@@ -78,6 +78,7 @@
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -114,12 +115,15 @@
           <a href="#home" class="text-white hover:text-blue-400 transition">
             HOME
           </a>
+
           <a href="#motor" class="text-gray-400 hover:text-white transition">
             MOTOR
           </a>
+
           <a href="#promo" class="text-gray-400 hover:text-white transition">
             PROMO
           </a>
+
           <a href="#about" class="text-gray-400 hover:text-white transition">
             ABOUT
           </a>
@@ -154,6 +158,7 @@
 
         <div class="flex items-center gap-3 mb-7">
           <span class="w-12 h-[2px] blue-line"></span>
+
           <span class="text-blue-400 text-xs font-bold tracking-[.35em]">
             YAMAHA MOTOR INDONESIA
           </span>
@@ -173,6 +178,7 @@
         </p>
 
         <div class="flex flex-wrap gap-4 mt-9">
+
           <a
             href="#motor"
             class="bg-blue-600 hover:bg-blue-500 px-7 py-3.5 rounded-full font-bold transition"
@@ -186,11 +192,13 @@
           >
             Lihat Promo
           </button>
+
         </div>
 
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-5 max-w-3xl mt-16">
+
         <div>
           <p class="text-2xl font-black">08</p>
           <p class="text-xs text-gray-500 mt-1">MODEL MOTOR</p>
@@ -210,6 +218,7 @@
           <p class="text-2xl font-black">2026</p>
           <p class="text-xs text-gray-500 mt-1">LINE UP</p>
         </div>
+
       </div>
 
     </div>
@@ -224,6 +233,7 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
 
         <div>
+
           <p class="text-blue-500 text-xs font-bold tracking-[.3em] mb-3">
             DISCOVER
           </p>
@@ -236,14 +246,15 @@
             Pilih kategori dan temukan Yamaha yang sesuai dengan
             karakter berkendara kamu.
           </p>
+
         </div>
+
 
         <!-- FILTER -->
         <div class="flex flex-wrap gap-2">
 
           <button
             class="filter-btn active border border-white/10 px-4 py-2 rounded-full text-xs font-bold transition"
-            data-filter="all"
             onclick="filterMotor('all', this)"
           >
             SEMUA
@@ -251,7 +262,6 @@
 
           <button
             class="filter-btn border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-gray-400 transition"
-            data-filter="maxi"
             onclick="filterMotor('maxi', this)"
           >
             MAXI
@@ -259,7 +269,6 @@
 
           <button
             class="filter-btn border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-gray-400 transition"
-            data-filter="classy"
             onclick="filterMotor('classy', this)"
           >
             CLASSY
@@ -267,7 +276,6 @@
 
           <button
             class="filter-btn border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-gray-400 transition"
-            data-filter="sport"
             onclick="filterMotor('sport', this)"
           >
             SPORT
@@ -275,7 +283,6 @@
 
           <button
             class="filter-btn border border-white/10 px-4 py-2 rounded-full text-xs font-bold text-gray-400 transition"
-            data-filter="naked"
             onclick="filterMotor('naked', this)"
           >
             NAKED
@@ -286,11 +293,12 @@
       </div>
 
 
-      <!-- MOTOR GRID -->
+      <!-- ================= MOTOR GRID ================= -->
       <div
         id="motorGrid"
         class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
       >
+
 
         <!-- NMAX -->
         <article
@@ -352,6 +360,7 @@
 
             </div>
           </div>
+
         </article>
 
 
@@ -415,6 +424,7 @@
 
             </div>
           </div>
+
         </article>
 
 
@@ -478,6 +488,7 @@
 
             </div>
           </div>
+
         </article>
 
 
@@ -541,6 +552,7 @@
 
             </div>
           </div>
+
         </article>
 
 
@@ -604,6 +616,7 @@
 
             </div>
           </div>
+
         </article>
 
 
@@ -667,6 +680,7 @@
 
             </div>
           </div>
+
         </article>
 
 
@@ -730,6 +744,7 @@
 
             </div>
           </div>
+
         </article>
 
 
@@ -793,6 +808,7 @@
 
             </div>
           </div>
+
         </article>
 
       </div>
@@ -847,6 +863,7 @@
       <div class="grid lg:grid-cols-2 gap-12 items-center">
 
         <div>
+
           <p class="text-blue-400 text-xs font-bold tracking-[.3em]">
             ABOUT
           </p>
@@ -854,9 +871,11 @@
           <h2 class="text-4xl sm:text-5xl font-black mt-4">
             Yamaha Performance
           </h2>
+
         </div>
 
         <div>
+
           <p class="text-gray-400 leading-relaxed">
             Website ini merupakan konsep showcase dan web sales
             untuk menampilkan berbagai pilihan motor Yamaha.
@@ -864,6 +883,7 @@
             harga, detail produk, dan promo melalui tampilan
             yang sederhana namun tetap premium.
           </p>
+
         </div>
 
       </div>
@@ -880,6 +900,7 @@
       <div class="flex flex-col sm:flex-row justify-between gap-5">
 
         <div>
+
           <p class="font-black tracking-widest">
             YAMAHA
           </p>
@@ -887,11 +908,20 @@
           <p class="text-gray-600 text-xs mt-2">
             Performance Web Sales
           </p>
+
         </div>
 
-        <p class="text-gray-600 text-xs">
-          © 2026 Yamaha Performance. Showcase Project.
-        </p>
+        <div class="text-right">
+
+          <p class="text-gray-600 text-xs">
+            © 2026 Yamaha Performance. Showcase Project.
+          </p>
+
+          <p class="text-gray-700 text-[10px] mt-1">
+            Project demo tidak resmi dan tidak berafiliasi dengan Yamaha.
+          </p>
+
+        </div>
 
       </div>
 
@@ -914,37 +944,61 @@
         ×
       </button>
 
-      <p id="detailCategory" class="text-blue-400 text-xs font-bold tracking-[.3em]">
+      <p
+        id="detailCategory"
+        class="text-blue-400 text-xs font-bold tracking-[.3em]"
+      >
         YAMAHA
       </p>
 
-      <h2 id="detailTitle" class="text-3xl font-black mt-3">
+      <h2
+        id="detailTitle"
+        class="text-3xl font-black mt-3"
+      >
         Yamaha
       </h2>
 
-      <p id="detailDescription" class="text-gray-400 mt-5 leading-relaxed">
+      <p
+        id="detailDescription"
+        class="text-gray-400 mt-5 leading-relaxed"
+      >
         Detail motor.
       </p>
 
+
+      <!-- HARGA -->
       <div class="mt-7 p-5 rounded-2xl bg-white/5 border border-white/5">
 
         <p class="text-[10px] text-gray-500">
           HARGA
         </p>
 
-        <p id="detailPrice" class="text-2xl font-black mt-1">
+        <p
+          id="detailPrice"
+          class="text-2xl font-black mt-1"
+        >
           Rp0
         </p>
 
       </div>
 
+
+      <!-- WHATSAPP -->
       <a
-        href="https://www.yamaha-motor.co.id/products/"
+        id="whatsappButton"
+        href="#"
         target="_blank"
-        class="block text-center bg-blue-600 hover:bg-blue-500 rounded-full py-3.5 mt-6 font-bold transition"
+        rel="noopener noreferrer"
+        class="block text-center bg-green-600 hover:bg-green-500 rounded-full py-3.5 mt-6 font-bold transition"
       >
-        Lihat di Yamaha
+        💬 Tertarik? Hubungi via WhatsApp
       </a>
+
+
+      <p class="text-center text-gray-600 text-[10px] mt-4">
+        Nomor WhatsApp pada halaman ini merupakan nomor dummy
+        untuk kebutuhan project/demo.
+      </p>
 
     </div>
   </div>
@@ -981,6 +1035,7 @@
       <a
         href="https://www.yamaha-motor.co.id/news"
         target="_blank"
+        rel="noopener noreferrer"
         class="block bg-blue-600 hover:bg-blue-500 rounded-full py-3.5 mt-7 font-bold transition"
       >
         Buka Yamaha News
@@ -993,69 +1048,133 @@
   <!-- ================= JAVASCRIPT ================= -->
   <script>
 
-    // DETAIL MOTOR
+    /*
+      NOMOR WHATSAPP DUMMY UNTUK PROJECT
+      Format: 62 + nomor tanpa tanda +
+    */
+    const whatsappNumber = "6281234567890";
+
+
+    // ================= DETAIL MOTOR =================
     function showDetail(title, category, description, price) {
 
       document.getElementById("detailTitle").textContent = title;
+
       document.getElementById("detailCategory").textContent = category;
+
       document.getElementById("detailDescription").textContent = description;
+
       document.getElementById("detailPrice").textContent = price;
 
+
+      // Pesan otomatis WhatsApp
+      const message =
+        "Halo, saya tertarik dengan " +
+        title +
+        ". Saya ingin mendapatkan informasi lebih lanjut mengenai motor tersebut.";
+
+      const whatsappLink =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+      document.getElementById("whatsappButton").href = whatsappLink;
+
+
+      // Tampilkan modal
       document.getElementById("detailModal").classList.add("show");
     }
 
 
-    // PROMO
+    // ================= PROMO =================
     function showPromo() {
-      document.getElementById("promoModal").classList.add("show");
+
+      document
+        .getElementById("promoModal")
+        .classList.add("show");
+
     }
 
 
-    // CLOSE MODAL
+    // ================= CLOSE MODAL =================
     function closeModal(id) {
-      document.getElementById(id).classList.remove("show");
+
+      document
+        .getElementById(id)
+        .classList.remove("show");
+
     }
 
 
-    // CLOSE MODAL KETIKA KLIK LUAR
+    // ================= CLOSE KETIKA KLIK LUAR =================
     window.addEventListener("click", function(event) {
 
-      const detailModal = document.getElementById("detailModal");
-      const promoModal = document.getElementById("promoModal");
+      const detailModal =
+        document.getElementById("detailModal");
+
+      const promoModal =
+        document.getElementById("promoModal");
+
 
       if (event.target === detailModal) {
+
         closeModal("detailModal");
+
       }
 
+
       if (event.target === promoModal) {
+
         closeModal("promoModal");
+
       }
 
     });
 
 
-    // FILTER MOTOR
+    // ================= FILTER MOTOR =================
     function filterMotor(category, button) {
 
-      const cards = document.querySelectorAll(".motor-item");
-      const buttons = document.querySelectorAll(".filter-btn");
+      const cards =
+        document.querySelectorAll(".motor-item");
+
+      const buttons =
+        document.querySelectorAll(".filter-btn");
+
 
       buttons.forEach(btn => {
+
         btn.classList.remove("active");
+
         btn.classList.add("text-gray-400");
+
       });
 
+
       button.classList.add("active");
+
       button.classList.remove("text-gray-400");
+
 
       cards.forEach(card => {
 
-        const cardCategory = card.dataset.category;
+        const cardCategory =
+          card.dataset.category;
 
-        if (category === "all" || cardCategory === category) {
+
+        if (
+          category === "all" ||
+          cardCategory === category
+        ) {
+
           card.style.display = "block";
+
         } else {
+
           card.style.display = "none";
+
         }
 
       });
